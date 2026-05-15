@@ -1,0 +1,100 @@
+[build-system]
+requires = ["setuptools>=49.4.0", "torch>=2.0", "ninja"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qkan"
+authors = [{name = "Jiun-Cheng Jiang", email = "jcjiang@phys.ntu.edu.tw"}]
+description = "Quantum-inspired Kolmogorov Arnold Networks"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dynamic = ["version"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+  "torch>=2.0",
+  "tqdm",
+  "matplotlib"
+]
+
+[project.optional-dependencies]
+flash = [
+    "triton>=3.0",
+]
+
+cutile = [
+    "cuda-tile",
+]
+
+cutn = [
+    "cuquantum",
+]
+
+qml = [
+    "pennylane>=0.37",
+]
+
+qiskit = [
+    "qiskit>=2.0",
+    "qiskit-ibm-runtime>=0.30",
+]
+
+cudaq = [
+    "cuda-quantum",
+]
+
+real-device = [
+    "qkan[qiskit,cudaq]",
+]
+
+dev = [
+    "mypy",
+    "ruff",
+    "isort",
+    "build",
+    "setuptools",
+    "wheel",
+    "twine",
+]
+
+doc = [
+    "sphinx>=8.0",
+    "sphinx-rtd-theme",
+    "sphinx-autodoc-typehints",
+    "nbsphinx",
+    "jupyter",
+    "qiskit[visualization]>=2.0",
+    "transformers",
+    "torchvision",
+]
+
+cute = [
+    "ninja",
+]
+
+gpu = [
+    "qkan[flash,cutile,cutn,cute]",
+]
+
+all = ["qkan[gpu,qml,dev,doc]"]
+
+[project.urls]
+Homepage = "https://github.com/Jim137/qkan"
+
+# Version resolution: `dynamic = ["version"]` in [project] tells setuptools
+# the version is supplied elsewhere. setup.py's setup(version=...) then
+# provides it, and QKAN_LOCAL_VERSION is appended at build time.
+# We intentionally do NOT use `[tool.setuptools.dynamic] version.attr` here
+# because that path ignores QKAN_LOCAL_VERSION and bakes only the plain
+# __version__ string into wheel metadata, causing pip to reject wheels with
+# local-tagged filenames.
+
+[tool.ruff]
+lint.select = ["F", "I"]

@@ -10,4 +10,3 @@ __pycache__/
 .eggs/
 *.so
 wandb/
-qkan_upstream/

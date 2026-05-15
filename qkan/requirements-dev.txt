@@ -1,0 +1,20 @@
+mypy
+ruff
+isort
+
+# Build Packages
+build
+setuptools
+wheel
+twine
+
+# Documentation requirements
+sphinx>=8.0
+sphinx-rtd-theme
+sphinx-autodoc-typehints
+nbsphinx
+jupyter
+PennyLane==0.37.0
+PennyLane_Lightning==0.37.0
+qiskit[visualization]==2.1.0
+transformers==4.57.1
