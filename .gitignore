@@ -1,0 +1,13 @@
+data/raw/
+data/processed/
+outputs/
+.venv/
+*.pkl
+*.parquet
+logs/*.log
+__pycache__/
+*.egg-info/
+.eggs/
+*.so
+wandb/
+qkan_upstream/
