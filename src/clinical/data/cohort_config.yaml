@@ -1,0 +1,68 @@
+# MIMIC-IV Sepsis Cohort Configuration
+
+cohort:
+  min_age: 18
+  first_icu_stay_only: true
+  min_stay_hours: 24
+  max_stay_hours: 240
+
+features:
+  vitals:
+    - heart_rate          # itemid: 220045
+    - sbp                 # itemid: 220050
+    - dbp                 # itemid: 220051
+    - map                 # itemid: 220052
+    - resp_rate           # itemid: 220210
+    - spo2                # itemid: 220277
+    - temperature         # itemid: 223761, 223762
+    - fio2                # itemid: 223835
+  labs:
+    - wbc                 # itemid: 51301
+    - hemoglobin          # itemid: 51222
+    - platelet            # itemid: 51265
+    - creatinine          # itemid: 50912
+    - bilirubin           # itemid: 50885
+    - lactate             # itemid: 50813
+    - pao2                # itemid: 50821
+    - pco2                # itemid: 50818
+    - ph                  # itemid: 50820
+    - glucose             # itemid: 50931
+
+# chartevents itemid mapping
+itemid_map:
+  heart_rate: [220045]
+  sbp: [220050, 220179]
+  dbp: [220051, 220180]
+  map: [220052, 220181]
+  resp_rate: [220210]
+  spo2: [220277]
+  temperature: [223761, 223762]
+  fio2: [223835]
+  wbc: [51301]
+  hemoglobin: [51222]
+  platelet: [51265]
+  creatinine: [50912]
+  bilirubin: [50885]
+  lactate: [50813]
+  pao2: [50821]
+  pco2: [50818]
+  ph: [50820]
+  glucose: [50931, 50809]
+
+# SOFA component itemids
+sofa_itemids:
+  pao2_fio2: [50821, 223835]
+  platelets: [51265]
+  bilirubin: [50885]
+  map: [220052, 220181]
+  creatinine: [50912]
+  gcs: [220739, 223900, 223901]
+
+time_grid:
+  resolution_hours: 1
+
+split:
+  train: 0.70
+  val: 0.15
+  test: 0.15
+  seed: 42
