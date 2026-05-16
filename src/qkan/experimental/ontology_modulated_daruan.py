@@ -75,12 +75,14 @@ class OntologyModulatedDARUAN(nn.Module):
         modulation = F.softplus(logits)  # [B, reps], always positive
         return self.w_base.unsqueeze(0) * modulation  # [B, reps]
 
-    def forward(self, x: torch.Tensor, concept_emb: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor, concept_emb: torch.Tensor, dampening_mask: torch.Tensor = None) -> torch.Tensor:
         """Forward pass with per-sample modulated re-uploading.
 
         Args:
             x: (B, dim) input features
             concept_emb: (B, d_ontology) ontology embedding
+            dampening_mask: (reps,) optional mask to dampen specific frequencies.
+                           Values in [0, 1]. Default: all ones (no dampening).
         Returns:
             (B, dim) modulated activation output
         """
@@ -89,6 +91,10 @@ class OntologyModulatedDARUAN(nn.Module):
 
         # Compute per-sample modulated weights: [B, reps]
         w_mod = self.compute_modulated_weights(concept_emb)
+
+        # Apply dampening mask if provided
+        if dampening_mask is not None:
+            w_mod = w_mod * dampening_mask.unsqueeze(0)
 
         # Data re-uploading circuit with per-sample frequencies
         # Using StateVector/TorchGates directly for per-sample control

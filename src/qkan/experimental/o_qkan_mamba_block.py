@@ -73,14 +73,15 @@ class OQKANMambaBlock(nn.Module):
             self.mixer = CausalConv1dFallback(d_model).to(device)
             self.use_mamba = False
 
-    def forward(self, x: torch.Tensor, concept_emb: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor, concept_emb: torch.Tensor, dampening_mask: torch.Tensor = None) -> torch.Tensor:
         """
         Args:
             x: (B, L, d_model)
             concept_emb: (B, d_ontology) or (B, L, d_ontology)
+            dampening_mask: (reps,) optional frequency dampening mask
         Returns:
             (B, L, d_model)
         """
         h = self.norm(x)
-        gate_val = torch.sigmoid(self.gate(h, concept_emb))
+        gate_val = torch.sigmoid(self.gate(h, concept_emb, dampening_mask=dampening_mask))
         return x + gate_val * self.mixer(h)

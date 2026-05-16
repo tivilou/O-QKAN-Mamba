@@ -38,11 +38,12 @@ class OntologyModulatedQKAN(nn.Module):
         )
         self.up_proj = nn.Linear(latent_dim, d_model, device=device)
 
-    def forward(self, x: torch.Tensor, concept_emb: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor, concept_emb: torch.Tensor, dampening_mask: torch.Tensor = None) -> torch.Tensor:
         """
         Args:
             x: (B, L, d_model) or (B, d_model)
             concept_emb: (B, d_ontology) or (B, L, d_ontology)
+            dampening_mask: (reps,) optional frequency dampening mask
         Returns:
             same shape as x
         """
@@ -59,7 +60,7 @@ class OntologyModulatedQKAN(nn.Module):
             c_flat = concept_emb
 
         h = self.down_proj(x_flat)
-        h = self.daruan(h, c_flat)
+        h = self.daruan(h, c_flat, dampening_mask=dampening_mask)
         h = self.up_proj(h)
 
         if has_seq:
