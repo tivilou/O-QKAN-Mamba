@@ -1,0 +1,336 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "SEPSIS-001"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "8867-4",
+              "display": "heart_rate"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 115.0,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "8480-6",
+              "display": "sbp"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 85.0,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "8462-4",
+              "display": "dbp"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 50.0,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "8478-0",
+              "display": "map"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 58.0,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "9279-1",
+              "display": "resp_rate"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 24.0,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "2708-6",
+              "display": "spo2"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 91.0,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "8310-5",
+              "display": "temperature"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 38.8,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "3150-0",
+              "display": "fio2"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 0.45,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "6690-2",
+              "display": "wbc"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 16.5,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "718-7",
+              "display": "hemoglobin"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 9.0,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "777-3",
+              "display": "platelet"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 90.0,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "2160-0",
+              "display": "creatinine"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 2.1,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "1975-2",
+              "display": "bilirubin"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 1.8,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "2524-7",
+              "display": "lactate"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 3.5,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "2703-7",
+              "display": "pao2"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 72.0,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "2019-8",
+              "display": "pco2"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 38.0,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "2744-1",
+              "display": "ph"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 7.32,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "2345-7",
+              "display": "glucose"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 160.0,
+          "unit": ""
+        },
+        "effectiveDateTime": "2024-01-01T12:00:00Z"
+      }
+    }
+  ]
+}

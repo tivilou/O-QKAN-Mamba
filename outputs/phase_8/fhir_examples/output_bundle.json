@@ -1,0 +1,58 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "timestamp": "2026-05-16T10:31:13.279794Z",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "RiskAssessment",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/SEPSIS-001"
+        },
+        "occurrenceDateTime": "2026-05-16T10:31:13.279794Z",
+        "prediction": [
+          {
+            "outcome": {
+              "text": "Sepsis"
+            },
+            "probabilityDecimal": 1.0,
+            "qualitativeRisk": {
+              "text": "high"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "active-concepts",
+              "display": "Active Clinical Concepts"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/SEPSIS-001"
+        },
+        "effectiveDateTime": "2026-05-16T10:31:13.279794Z",
+        "valueString": "tachycardia, hypotension, shock_index_elevated, tachypnea, hypoxemia, high_fio2, fever, leukocytosis, thrombocytopenia, elevated_lactate, acidosis, elevated_creatinine, aki_stage2"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/SEPSIS-001"
+        },
+        "date": "2026-05-16T10:31:13.279794Z",
+        "summary": "Risk=1.00. Active: tachycardia, hypotension, shock_index_elevated, tachypnea, hypoxemia."
+      }
+    }
+  ]
+}
