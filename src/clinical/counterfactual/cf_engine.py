@@ -97,6 +97,8 @@ class CounterfactualEngine:
         # Counterfactual prediction
         with torch.no_grad():
             out_cf = self.model(x, cf_emb)
+            if isinstance(out_cf, tuple):
+                out_cf = out_cf[0]
             if out_cf.dim() == 3:
                 cf_risk = torch.sigmoid(out_cf[0, -1, 0]).item()
             else:
@@ -131,6 +133,8 @@ class CounterfactualEngine:
 
         with torch.no_grad():
             out_orig = self.model(x, concept_emb)
+            if isinstance(out_orig, tuple):
+                out_orig = out_orig[0]
             if out_orig.dim() == 3:
                 orig_risk = torch.sigmoid(out_orig[0, -1, 0]).item()
             else:
@@ -156,6 +160,8 @@ class CounterfactualEngine:
 
         with torch.no_grad():
             out_cf = self.model(x, cf_emb)
+            if isinstance(out_cf, tuple):
+                out_cf = out_cf[0]
             if out_cf.dim() == 3:
                 cf_risk = torch.sigmoid(out_cf[0, -1, 0]).item()
             else:
