@@ -1,0 +1,15 @@
+{
+  "n_test": 50,
+  "n_cases_with_violations": 17,
+  "spectral": {
+    "resolution_rate": 0.0,
+    "mean_drift": 0.0009517178815953872,
+    "mean_iterations": 5.0,
+    "mean_violations_before": 2.0,
+    "mean_violations_after": 2.0
+  },
+  "hard_projection": {
+    "resolution_rate": 1.0,
+    "mean_drift": 0.6542551166871015
+  }
+}

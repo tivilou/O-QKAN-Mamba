@@ -1,0 +1,26 @@
+{
+  "MLP": {
+    "test_auroc": 0.4815730892901311,
+    "test_auprc": 0.07571877726395793,
+    "best_val_auroc": 0.5628856193640247,
+    "params": 7265
+  },
+  "LSTM": {
+    "test_auroc": 0.7221122928518426,
+    "test_auprc": 0.18008863058254682,
+    "best_val_auroc": 0.7422876127195064,
+    "params": 4897
+  },
+  "Original_DARUAN": {
+    "test_auroc": 0.5364828097947069,
+    "test_auprc": 0.11911334940956195,
+    "best_val_auroc": 0.5488372093023256,
+    "params": 457
+  },
+  "OPFA_DARUAN": {
+    "test_auroc": 0.6845164481820429,
+    "test_auprc": 0.17895586069344363,
+    "best_val_auroc": 0.6995728523967727,
+    "params": 476
+  }
+}
