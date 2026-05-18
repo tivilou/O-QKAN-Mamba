@@ -1,0 +1,62 @@
+{
+  "MLP": {
+    "test_auroc": 0.49975265891664605,
+    "test_auprc": 0.07782221813942691,
+    "best_val_auroc": 0.5251067869008068,
+    "params": 7265
+  },
+  "GRU": {
+    "test_auroc": 0.7484541182290378,
+    "test_auprc": 0.19774999417549669,
+    "best_val_auroc": 0.7406739439962031,
+    "params": 3681
+  },
+  "LSTM": {
+    "test_auroc": 0.7179074944348256,
+    "test_auprc": 0.160424996156592,
+    "best_val_auroc": 0.7307071665875653,
+    "params": 4897
+  },
+  "Transformer": {
+    "test_auroc": 0.6500123670541677,
+    "test_auprc": 0.13104734431483606,
+    "best_val_auroc": 0.7167536782154722,
+    "params": 18817
+  },
+  "TCN": {
+    "test_auroc": 0.4915904031659659,
+    "test_auprc": 0.0790782571613231,
+    "best_val_auroc": 0.6251542477456098,
+    "params": 6657
+  },
+  "Original_DARUAN": {
+    "test_auroc": 0.6589166460549097,
+    "test_auprc": 0.18645259556233268,
+    "best_val_auroc": 0.6245847176079735,
+    "params": 457
+  },
+  "OPFA_DARUAN": {
+    "test_auroc": 0.6014098441751174,
+    "test_auprc": 0.1427383623913911,
+    "best_val_auroc": 0.6590412909349787,
+    "params": 476
+  },
+  "Ablation_MultiAxisOnly": {
+    "test_auroc": 0.6404897353450408,
+    "test_auprc": 0.16194044531638038,
+    "best_val_auroc": 0.6527764594209776,
+    "params": 476
+  },
+  "Ablation_NoMultiAxis": {
+    "test_auroc": 0.6435814988869651,
+    "test_auprc": 0.17075794748010387,
+    "best_val_auroc": 0.6869482676791646,
+    "params": 476
+  },
+  "Ablation_NoAdaptiveMeasure": {
+    "test_auroc": 0.6430868167202574,
+    "test_auprc": 0.1276594700363031,
+    "best_val_auroc": 0.7176079734219268,
+    "params": 476
+  }
+}

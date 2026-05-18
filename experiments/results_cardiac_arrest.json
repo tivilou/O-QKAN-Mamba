@@ -1,62 +1,62 @@
 {
   "MLP": {
-    "test_auroc": 0.7203194046463954,
-    "test_auprc": 0.11387345397351828,
-    "best_val_auroc": 0.7313524500270521,
+    "test_auroc": 0.7051292659912528,
+    "test_auprc": 0.10973342147798301,
+    "best_val_auroc": 0.7201288921206449,
     "params": 7265
   },
   "GRU": {
-    "test_auroc": 0.7268534398193439,
-    "test_auprc": 0.13206575723740008,
-    "best_val_auroc": 0.748492204127047,
+    "test_auroc": 0.7322303471783832,
+    "test_auprc": 0.1420625947852201,
+    "best_val_auroc": 0.748712208726539,
     "params": 3681
   },
   "LSTM": {
-    "test_auroc": 0.7286148232477253,
-    "test_auprc": 0.1325594877994633,
-    "best_val_auroc": 0.7519730623975583,
+    "test_auroc": 0.729186046666818,
+    "test_auprc": 0.12764921237086457,
+    "best_val_auroc": 0.7461798294997587,
     "params": 4897
   },
   "Transformer": {
-    "test_auroc": 0.7258694807872741,
-    "test_auprc": 0.12153291846584967,
-    "best_val_auroc": 0.7393350942563512,
+    "test_auroc": 0.7226436700303895,
+    "test_auprc": 0.12076443105733123,
+    "best_val_auroc": 0.7415391282500527,
     "params": 18817
   },
   "TCN": {
-    "test_auroc": 0.6101380145181502,
-    "test_auprc": 0.07548738768707566,
-    "best_val_auroc": 0.6033017971251846,
+    "test_auroc": 0.6059953100955732,
+    "test_auprc": 0.07120917286955014,
+    "best_val_auroc": 0.6047328240215778,
     "params": 6657
   },
   "Original_DARUAN": {
-    "test_auroc": 0.6812746823904365,
-    "test_auprc": 0.10484374707193703,
-    "best_val_auroc": 0.7086374736293581,
+    "test_auroc": 0.6815275955631421,
+    "test_auprc": 0.09220309102487834,
+    "best_val_auroc": 0.6970742711599892,
     "params": 457
   },
   "OPFA_DARUAN": {
-    "test_auroc": 0.7067448406380085,
-    "test_auprc": 0.10901638431178841,
-    "best_val_auroc": 0.7095779766755245,
+    "test_auroc": 0.7009738825441865,
+    "test_auprc": 0.12083687062442477,
+    "best_val_auroc": 0.7205270273324142,
     "params": 476
   },
   "Ablation_MultiAxisOnly": {
-    "test_auroc": 0.6980917400826673,
-    "test_auprc": 0.10029063818660983,
-    "best_val_auroc": 0.7135476971301032,
+    "test_auroc": 0.7071352211288603,
+    "test_auprc": 0.12238575247049178,
+    "best_val_auroc": 0.7044706795682858,
     "params": 476
   },
   "Ablation_NoMultiAxis": {
-    "test_auroc": 0.7142574963064,
-    "test_auprc": 0.11882554907108672,
-    "best_val_auroc": 0.7186892245602233,
+    "test_auroc": 0.709111814315019,
+    "test_auprc": 0.12541173697572114,
+    "best_val_auroc": 0.7049093594343423,
     "params": 476
   },
   "Ablation_NoAdaptiveMeasure": {
-    "test_auroc": 0.6785863955401864,
-    "test_auprc": 0.07537298386496824,
-    "best_val_auroc": 0.7171697970241553,
+    "test_auroc": 0.7057678884352616,
+    "test_auprc": 0.1224210087891446,
+    "best_val_auroc": 0.7186606439022833,
     "params": 476
   }
 }

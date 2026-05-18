@@ -313,25 +313,29 @@
 15:29:57 |   [Ablation_NoAdaptiveMeasure] Epoch 45/50 | loss=0.1610 | val_auroc=0.7172 | 27.2s
 15:30:26 |   [Ablation_NoAdaptiveMeasure] Epoch 46/50 | loss=0.1610 | val_auroc=0.7168 | 28.0s
 15:30:55 |   [Ablation_NoAdaptiveMeasure] Epoch 47/50 | loss=0.1611 | val_auroc=0.7187 | 27.7s
- val_auroc=0.7140 | 26.7s
-15:23:15 |   [Ablation_NoAdaptiveMeasure] Epoch  4/50 | loss=0.1651 | val_auroc=0.7117 | 26.6s
-15:23:43 |   [Ablation_NoAdaptiveMeasure] Epoch  5/50 | loss=0.1643 | val_auroc=0.7153 | 26.7s
-15:24:10 |   [Ablation_NoAdaptiveMeasure] Epoch  6/50 | loss=0.1639 | val_auroc=0.7132 | 26.3s
-15:24:35 |   [Ablation_NoAdaptiveMeasure] Epoch  7/50 | loss=0.1634 | val_auroc=0.7106 | 24.2s
-15:25:00 |   [Ablation_NoAdaptiveMeasure] Epoch  8/50 | loss=0.1630 | val_auroc=0.7145 | 23.7s
-15:25:27 |   [Ablation_NoAdaptiveMeasure] Epoch  9/50 | loss=0.1628 | val_auroc=0.7132 | 26.2s
-15:25:55 |   [Ablation_NoAdaptiveMeasure] Epoch 10/50 | loss=0.1625 | val_auroc=0.7119 | 26.9s
-15:26:23 |   [Ablation_NoAdaptiveMeasure] Epoch 11/50 | loss=0.1623 | val_auroc=0.7139 | 26.8s
-15:26:52 |   [Ablation_NoAdaptiveMeasure] Epoch 12/50 | loss=0.1622 | val_auroc=0.7117 | 27.4s
-15:26:52 |   [Ablation_NoAdaptiveMeasure] Early stopping at epoch 12 (patience=10)
-15:26:53 |   [Ablation_NoAdaptiveMeasure] DONE >> Test AUROC: 0.6786, AUPRC: 0.0754
-15:26:53 | 
-15:26:53 | ======================================================================
-15:26:53 | FINAL RESULTS (Cardiac Arrest, 64K patients)
-15:26:53 | ======================================================================
-15:26:53 | Model                        AUROC      AUPRC      Params    
-15:26:53 | ----------------------------------------------------------
-15:26:53 | LSTM                         0.7286    0.1326    4897
+15:31:23 |   [Ablation_NoAdaptiveMeasure] Epoch 48/50 | loss=0.1609 | val_auroc=0.7171 | 27.4s
+15:31:47 |   [Ablation_NoAdaptiveMeasure] Epoch 49/50 | loss=0.1609 | val_auroc=0.7146 | 22.7s
+15:32:15 |   [Ablation_NoAdaptiveMeasure] Epoch 50/50 | loss=0.1609 | val_auroc=0.7171 | 26.7s
+15:32:16 |   [Ablation_NoAdaptiveMeasure] DONE >> Test AUROC: 0.7058, AUPRC: 0.1224
+15:32:16 | 
+15:32:16 | ======================================================================
+15:32:16 | FINAL RESULTS (Cardiac Arrest, 64K patients)
+15:32:16 | ======================================================================
+15:32:16 | Model                        AUROC      AUPRC      Params    
+15:32:16 | ----------------------------------------------------------
+15:32:16 | GRU                          0.7322    0.1421    3681
+15:32:16 | LSTM                         0.7292    0.1276    4897
+15:32:16 | Transformer                  0.7226    0.1208    18817
+15:32:16 | Ablation_NoMultiAxis         0.7091    0.1254    476
+15:32:16 | Ablation_MultiAxisOnly       0.7071    0.1224    476
+15:32:16 | Ablation_NoAdaptiveMeasure   0.7058    0.1224    476
+15:32:16 | MLP                          0.7051    0.1097    7265
+15:32:16 | OPFA_DARUAN                  0.7010    0.1208    476 <-- ours
+15:32:16 | Original_DARUAN              0.6815    0.0922    457
+15:32:16 | TCN                          0.6060    0.0712    6657
+15:32:16 | 
+Results saved to /home/project/experiments/results_cardiac_arrest.json
+ 4897
 15:26:53 | GRU                          0.7269    0.1321    3681
 15:26:53 | Transformer                  0.7259    0.1215    18817
 15:26:53 | MLP                          0.7203    0.1139    7265

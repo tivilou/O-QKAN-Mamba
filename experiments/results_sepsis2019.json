@@ -1,0 +1,80 @@
+{
+  "LSTM": {
+    "test_auroc": 0.8733101169747299,
+    "test_auprc": 0.4460951658577958,
+    "best_val_auroc": 0.8878775711339454,
+    "params": 58945
+  },
+  "GRU": {
+    "test_auroc": 0.8832681489418698,
+    "test_auprc": 0.47314371339655575,
+    "best_val_auroc": 0.8935226588308298,
+    "params": 44225
+  },
+  "Transformer": {
+    "test_auroc": 0.8832699348156086,
+    "test_auprc": 0.4752337376404902,
+    "best_val_auroc": 0.8891779671843916,
+    "params": 72321
+  },
+  "TCN": {
+    "test_auroc": 0.8513925350477721,
+    "test_auprc": 0.2722072291085534,
+    "best_val_auroc": 0.8498768045846946,
+    "params": 43713
+  },
+  "Mamba_Pure": {
+    "test_auroc": 0.6838365032592195,
+    "test_auprc": 0.1729153110742361,
+    "best_val_auroc": 0.6446241170995235,
+    "params": 6785
+  },
+  "Mamba_MLP_Gate": {
+    "test_auroc": 0.6853893204750424,
+    "test_auprc": 0.190632306975333,
+    "best_val_auroc": 0.655776496139877,
+    "params": 10945
+  },
+  "Mamba_Sigmoid_Gate": {
+    "test_auroc": 0.6913987856058578,
+    "test_auprc": 0.1992547513976466,
+    "best_val_auroc": 0.6461891551532186,
+    "params": 6785
+  },
+  "Original_DARUAN_Mamba": {
+    "test_auroc": 0.8418242700241092,
+    "test_auprc": 0.3208387060174364,
+    "best_val_auroc": 0.8408032341077915,
+    "params": 6823
+  },
+  "OPFA_QKAN_Mamba": {
+    "test_auroc": 0.846638092686847,
+    "test_auprc": 0.32943296544856604,
+    "best_val_auroc": 0.8607353397455787,
+    "params": 13300
+  },
+  "Ablation_NoMultiAxis": {
+    "test_auroc": 0.8506442539512457,
+    "test_auprc": 0.313311224906874,
+    "best_val_auroc": 0.8641994123122411,
+    "params": 13300
+  },
+  "Ablation_NoPartition": {
+    "test_auroc": 0.8534520939369585,
+    "test_auprc": 0.3783024070574691,
+    "best_val_auroc": 0.874695661696264,
+    "params": 13300
+  },
+  "Ablation_NoAdaptiveMeasure": {
+    "test_auroc": 0.852349316903295,
+    "test_auprc": 0.3526749372462887,
+    "best_val_auroc": 0.8530570714168385,
+    "params": 13300
+  },
+  "Ablation_NoMamba": {
+    "test_auroc": 0.8479516028216805,
+    "test_auprc": 0.3796485355552466,
+    "best_val_auroc": 0.8603319888302823,
+    "params": 2386
+  }
+}
