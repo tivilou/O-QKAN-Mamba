@@ -1,0 +1,96 @@
+{
+  "sepsis": {
+    "LSTM": {
+      "test_auroc": 0.7256987385604748,
+      "test_auprc": 0.16773946535552914,
+      "params": 13345
+    },
+    "GRU": {
+      "test_auroc": 0.7315112540192927,
+      "test_auprc": 0.19256020627630488,
+      "params": 10017
+    },
+    "Transformer": {
+      "test_auroc": 0.5375958446697997,
+      "test_auprc": 0.14693159049542528,
+      "params": 18817
+    },
+    "TCN": {
+      "test_auroc": 0.6282463517190205,
+      "test_auprc": 0.0991297468847039,
+      "params": 6657
+    },
+    "Mamba_Pure": {
+      "test_auroc": 0.47217412812268117,
+      "test_auprc": 0.08420859107880475,
+      "params": 1409
+    },
+    "Mamba_MLP_Gate": {
+      "test_auroc": 0.5643086816720257,
+      "test_auprc": 0.09534848563975974,
+      "params": 2465
+    },
+    "Mamba_Sigmoid_Gate": {
+      "test_auroc": 0.5136037595844669,
+      "test_auprc": 0.10407697104349779,
+      "params": 1409
+    },
+    "Original_DARUAN_Mamba": {
+      "test_auroc": 0.558619836754885,
+      "test_auprc": 0.1622746491494637,
+      "params": 473
+    },
+    "OPFA_QKAN_Mamba": {
+      "test_auroc": 0.5823645807568638,
+      "test_auprc": 0.10990601853607582,
+      "params": 1008
+    }
+  },
+  "cardiac_arrest": {
+    "LSTM": {
+      "test_auroc": 0.7353253637879051,
+      "test_auprc": 0.1367904974265663,
+      "params": 13345
+    },
+    "GRU": {
+      "test_auroc": 0.7252168446846192,
+      "test_auprc": 0.13490723701624802,
+      "params": 10017
+    },
+    "Transformer": {
+      "test_auroc": 0.7345692935381019,
+      "test_auprc": 0.1306360120150026,
+      "params": 18817
+    },
+    "TCN": {
+      "test_auroc": 0.6031552086099919,
+      "test_auprc": 0.07841619860628873,
+      "params": 6657
+    },
+    "Mamba_Pure": {
+      "test_auroc": 0.5589287692404197,
+      "test_auprc": 0.060912185896425455,
+      "params": 1409
+    },
+    "Mamba_MLP_Gate": {
+      "test_auroc": 0.5686028649256809,
+      "test_auprc": 0.06887826798538485,
+      "params": 2465
+    },
+    "Mamba_Sigmoid_Gate": {
+      "test_auroc": 0.5618749741414631,
+      "test_auprc": 0.06452296580038291,
+      "params": 1409
+    },
+    "Original_DARUAN_Mamba": {
+      "test_auroc": 0.6884113048851613,
+      "test_auprc": 0.08347182990817284,
+      "params": 473
+    },
+    "OPFA_QKAN_Mamba": {
+      "test_auroc": 0.713644899228448,
+      "test_auprc": 0.11628133552172949,
+      "params": 1008
+    }
+  }
+}

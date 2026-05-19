@@ -1,0 +1,158 @@
+01:16:28 | ============================================================
+01:16:28 | PHASE D: Clinical Time Series External Validation (DEVICE=cuda)
+01:16:28 | ============================================================
+01:16:28 | 
+############################################################
+01:16:28 | # Dataset: sepsis
+01:16:28 | ############################################################
+01:16:31 |   Train=2689, Val=336, Test=337
+01:16:32 | 
+  [LSTM] (13345 params) training...
+01:16:33 |     Epoch 10 | loss=0.2848 | val_auroc=0.7485
+01:16:34 |     Epoch 20 | loss=0.2737 | val_auroc=0.7484
+01:16:35 |     Early stop at epoch 25
+01:16:35 |   [LSTM] DONE >> AUROC=0.7257, AUPRC=0.1677
+01:16:35 | 
+  [GRU] (10017 params) training...
+01:16:36 |     Epoch 10 | loss=0.2809 | val_auroc=0.7267
+01:16:37 |     Epoch 20 | loss=0.2704 | val_auroc=0.7418
+01:16:38 |     Epoch 30 | loss=0.2676 | val_auroc=0.7473
+01:16:39 |     Epoch 40 | loss=0.2655 | val_auroc=0.7547
+01:16:40 |     Epoch 50 | loss=0.2642 | val_auroc=0.7645
+01:16:40 |   [GRU] DONE >> AUROC=0.7315, AUPRC=0.1926
+01:16:40 | 
+  [Transformer] (18817 params) training...
+01:16:41 |     Epoch 10 | loss=0.3048 | val_auroc=0.6169
+01:16:42 |     Early stop at epoch 11
+01:16:42 |   [Transformer] DONE >> AUROC=0.5376, AUPRC=0.1469
+01:16:42 | 
+  [TCN] (6657 params) training...
+01:16:43 |     Epoch 10 | loss=0.3154 | val_auroc=0.5867
+01:16:44 |     Epoch 20 | loss=0.3089 | val_auroc=0.5692
+01:16:45 |     Epoch 30 | loss=0.3145 | val_auroc=0.6022
+01:16:46 |     Epoch 40 | loss=0.3051 | val_auroc=0.6494
+01:16:47 |     Epoch 50 | loss=0.3365 | val_auroc=0.6597
+01:16:47 |   [TCN] DONE >> AUROC=0.6282, AUPRC=0.0991
+01:16:47 | 
+  [Mamba_Pure] (1409 params) training...
+01:16:48 |     Epoch 10 | loss=0.3041 | val_auroc=0.5816
+01:16:49 |     Epoch 20 | loss=0.3066 | val_auroc=0.5730
+01:16:49 |     Early stop at epoch 25
+01:16:49 |   [Mamba_Pure] DONE >> AUROC=0.4722, AUPRC=0.0842
+01:16:49 | 
+  [Mamba_MLP_Gate] (2465 params) training...
+01:16:50 |     Epoch 10 | loss=0.3126 | val_auroc=0.6182
+01:16:51 |     Epoch 20 | loss=0.2971 | val_auroc=0.6660
+01:16:52 |     Epoch 30 | loss=0.2966 | val_auroc=0.6453
+01:16:52 |     Early stop at epoch 30
+01:16:52 |   [Mamba_MLP_Gate] DONE >> AUROC=0.5643, AUPRC=0.0953
+01:16:52 | 
+  [Mamba_Sigmoid_Gate] (1409 params) training...
+01:16:53 |     Epoch 10 | loss=0.3093 | val_auroc=0.5449
+01:16:54 |     Epoch 20 | loss=0.3222 | val_auroc=0.5879
+01:16:55 |     Epoch 30 | loss=0.3129 | val_auroc=0.5745
+01:16:56 |     Epoch 40 | loss=0.3069 | val_auroc=0.6356
+01:16:57 |     Early stop at epoch 44
+01:16:57 |   [Mamba_Sigmoid_Gate] DONE >> AUROC=0.5136, AUPRC=0.1041
+01:16:57 | 
+  [Original_DARUAN_Mamba] (473 params) training...
+01:17:02 |     Epoch 10 | loss=2.9786 | val_auroc=0.4910
+01:17:07 |     Epoch 20 | loss=0.3304 | val_auroc=0.5994
+01:17:10 |     Early stop at epoch 26
+01:17:10 |   [Original_DARUAN_Mamba] DONE >> AUROC=0.5586, AUPRC=0.1623
+01:17:10 | 
+  [OPFA_QKAN_Mamba] (1008 params) training...
+01:17:16 |     Epoch 10 | loss=0.4588 | val_auroc=0.5663
+01:17:21 |     Early stop at epoch 17
+01:17:21 |   [OPFA_QKAN_Mamba] DONE >> AUROC=0.5824, AUPRC=0.1099
+01:17:21 | 
+############################################################
+01:17:21 | # Dataset: cardiac_arrest
+01:17:21 | ############################################################
+01:18:05 |   Train=51671, Val=6459, Test=6459
+01:18:05 | 
+  [LSTM] (13345 params) training...
+01:18:26 |     Epoch 10 | loss=0.1637 | val_auroc=0.6852
+01:18:46 |     Epoch 20 | loss=0.1593 | val_auroc=0.7335
+01:19:07 |     Epoch 30 | loss=0.1559 | val_auroc=0.7376
+01:19:27 |     Epoch 40 | loss=0.1538 | val_auroc=0.7367
+01:19:41 |     Early stop at epoch 47
+01:19:41 |   [LSTM] DONE >> AUROC=0.7353, AUPRC=0.1368
+01:19:41 | 
+  [GRU] (10017 params) training...
+01:20:01 |     Epoch 10 | loss=0.1567 | val_auroc=0.7441
+01:20:20 |     Epoch 20 | loss=0.1530 | val_auroc=0.7518
+01:20:39 |     Epoch 30 | loss=0.1498 | val_auroc=0.7391
+01:20:39 |     Early stop at epoch 30
+01:20:39 |   [GRU] DONE >> AUROC=0.7252, AUPRC=0.1349
+01:20:39 | 
+  [Transformer] (18817 params) training...
+01:21:13 |     Epoch 10 | loss=0.1552 | val_auroc=0.7381
+01:21:38 |     Early stop at epoch 17
+01:21:38 |   [Transformer] DONE >> AUROC=0.7346, AUPRC=0.1306
+01:21:38 | 
+  [TCN] (6657 params) training...
+01:21:56 |     Epoch 10 | loss=0.1679 | val_auroc=0.5875
+01:22:05 |     Early stop at epoch 15
+01:22:05 |   [TCN] DONE >> AUROC=0.6032, AUPRC=0.0784
+01:22:05 | 
+  [Mamba_Pure] (1409 params) training...
+01:22:22 |     Epoch 10 | loss=0.1707 | val_auroc=0.6030
+01:22:34 |     Early stop at epoch 17
+01:22:34 |   [Mamba_Pure] DONE >> AUROC=0.5589, AUPRC=0.0609
+01:22:34 | 
+  [Mamba_MLP_Gate] (2465 params) training...
+01:22:53 |     Epoch 10 | loss=0.1706 | val_auroc=0.5905
+01:22:59 |     Early stop at epoch 13
+01:22:59 |   [Mamba_MLP_Gate] DONE >> AUROC=0.5686, AUPRC=0.0689
+01:22:59 | 
+  [Mamba_Sigmoid_Gate] (1409 params) training...
+01:23:16 |     Epoch 10 | loss=0.1706 | val_auroc=0.5896
+01:23:30 |     Early stop at epoch 18
+01:23:30 |   [Mamba_Sigmoid_Gate] DONE >> AUROC=0.5619, AUPRC=0.0645
+01:23:30 | 
+  [Original_DARUAN_Mamba] (473 params) training...
+01:25:02 |     Epoch 10 | loss=0.1664 | val_auroc=0.6882
+01:26:33 |     Epoch 20 | loss=0.1643 | val_auroc=0.7009
+01:28:09 |     Epoch 30 | loss=0.1641 | val_auroc=0.6854
+01:29:14 |     Early stop at epoch 37
+01:29:14 |   [Original_DARUAN_Mamba] DONE >> AUROC=0.6884, AUPRC=0.0835
+01:29:14 | 
+  [OPFA_QKAN_Mamba] (1008 params) training...
+01:31:09 |     Epoch 10 | loss=0.1629 | val_auroc=0.6937
+01:33:04 |     Epoch 20 | loss=0.1615 | val_auroc=0.7083
+01:34:59 |     Epoch 30 | loss=0.1606 | val_auroc=0.6900
+01:35:33 |     Early stop at epoch 33
+01:35:34 |   [OPFA_QKAN_Mamba] DONE >> AUROC=0.7136, AUPRC=0.1163
+01:35:34 | 
+======================================================================
+01:35:34 | SUMMARY: ALL DATASETS
+01:35:34 | ======================================================================
+01:35:34 | 
+  [sepsis]
+01:35:34 |   Model                        AUROC      AUPRC      Params
+01:35:34 |   --------------------------------------------------------
+01:35:34 |   GRU                          0.7315    0.1926    10017
+01:35:34 |   LSTM                         0.7257    0.1677    13345
+01:35:34 |   TCN                          0.6282    0.0991    6657
+01:35:34 |   OPFA_QKAN_Mamba              0.5824    0.1099    1008 <--
+01:35:34 |   Mamba_MLP_Gate               0.5643    0.0953    2465
+01:35:34 |   Original_DARUAN_Mamba        0.5586    0.1623    473
+01:35:34 |   Transformer                  0.5376    0.1469    18817
+01:35:34 |   Mamba_Sigmoid_Gate           0.5136    0.1041    1409
+01:35:34 |   Mamba_Pure                   0.4722    0.0842    1409
+01:35:34 | 
+  [cardiac_arrest]
+01:35:34 |   Model                        AUROC      AUPRC      Params
+01:35:34 |   --------------------------------------------------------
+01:35:34 |   LSTM                         0.7353    0.1368    13345
+01:35:34 |   Transformer                  0.7346    0.1306    18817
+01:35:34 |   GRU                          0.7252    0.1349    10017
+01:35:34 |   OPFA_QKAN_Mamba              0.7136    0.1163    1008 <--
+01:35:34 |   Original_DARUAN_Mamba        0.6884    0.0835    473
+01:35:34 |   TCN                          0.6032    0.0784    6657
+01:35:34 |   Mamba_MLP_Gate               0.5686    0.0689    2465
+01:35:34 |   Mamba_Sigmoid_Gate           0.5619    0.0645    1409
+01:35:34 |   Mamba_Pure                   0.5589    0.0609    1409
+01:35:34 | 
+Results saved to /home/project/experiments/results_clinical_ts.json

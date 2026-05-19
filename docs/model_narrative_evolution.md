@@ -73,6 +73,48 @@ bands = 3 (infection / hemodynamics / organ_function)
 | w/o Adaptive Measure | 0.8523 | +0.0057 |
 | w/o Mamba (Conv1d) | 0.8480 | +0.0014 |
 
+**外部验证：Clinical Time Series 数据集（4 特征）**
+
+eICU Sepsis（3,362 患者）：
+
+| 模型 | AUROC | AUPRC | 参数量 |
+|------|-------|-------|--------|
+| GRU | 0.7315 | 0.1926 | 10,017 |
+| LSTM | 0.7257 | 0.1677 | 13,345 |
+| TCN | 0.6282 | 0.0991 | 6,657 |
+| **OPFA_QKAN_Mamba** | **0.5824** | **0.1099** | **1,008** |
+| Mamba + MLP Gate | 0.5643 | 0.0953 | 2,465 |
+| Original DARUAN + Mamba | 0.5586 | 0.1623 | 473 |
+| Transformer | 0.5376 | 0.1469 | 18,817 |
+| Mamba + Sigmoid Gate | 0.5136 | 0.1041 | 1,409 |
+| Mamba (pure) | 0.4722 | 0.0842 | 1,409 |
+
+eICU Cardiac Arrest（64,589 患者）：
+
+| 模型 | AUROC | AUPRC | 参数量 |
+|------|-------|-------|--------|
+| LSTM | 0.7353 | 0.1368 | 13,345 |
+| Transformer | 0.7346 | 0.1306 | 18,817 |
+| GRU | 0.7252 | 0.1349 | 10,017 |
+| **OPFA_QKAN_Mamba** | **0.7136** | **0.1163** | **1,008** |
+| Original DARUAN + Mamba | 0.6884 | 0.0835 | 473 |
+| TCN | 0.6032 | 0.0784 | 6,657 |
+| Mamba + MLP Gate | 0.5686 | 0.0689 | 2,465 |
+| Mamba + Sigmoid Gate | 0.5619 | 0.0645 | 1,409 |
+| Mamba (pure) | 0.5589 | 0.0609 | 1,409 |
+
+**外部验证小结**：
+
+| 数据集 | OPFA vs LSTM | OPFA vs Original DARUAN | OPFA vs Pure Mamba |
+|--------|-------------|------------------------|-------------------|
+| Sepsis (3.3K) | 0.58 vs 0.73 (-20%) | 0.58 vs 0.56 (+4.3%) | 0.58 vs 0.47 (+23%) |
+| Cardiac Arrest (64K) | 0.71 vs 0.74 (-3%) | 0.71 vs 0.69 (+3.7%) | 0.71 vs 0.56 (+28%) |
+
+结论：
+- OPFA 在大数据集（64K）上接近经典模型（-3%），小数据集（3.3K）差距较大（-20%）
+- OPFA 始终优于 Original DARUAN（+3-4%）和 Pure Mamba（+23-28%）
+- 参数效率极高：1,008 params vs LSTM 13,345 params（1/13）
+
 ### 当前叙事
 
 > OPFA-QKAN-Mamba 是一个将医学本体知识编码进量子电路频率结构的 Mamba 混合模型。
