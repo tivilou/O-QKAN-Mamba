@@ -268,7 +268,7 @@ def run():
     log("=" * 60)
 
     all_results = {}
-    for ds in ["sepsis", "cardiac_arrest"]:
+    for ds in ["sepsis", "cardiac_arrest", "gib"]:
         all_results[ds] = run_on_dataset(ds)
 
     # Summary

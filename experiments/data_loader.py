@@ -83,9 +83,49 @@ class ICUCardiacArrestDataset(Dataset):
         return torch.from_numpy(x), torch.tensor(target, dtype=torch.float32)
 
 
+class MIMICGIBDataset(Dataset):
+    """MIMIC GIB dataset: 2602 patients with gastrointestinal bleeding."""
+
+    FEATURES = ["hr_normalized", "map_normalized", "pressor_gaussian", "bloodprod_gaussian"]
+    TARGET = "HOSP_MORT"
+
+    def __init__(self, split: str = "train", seq_len: int = 48, data_dir: str = None):
+        self.seq_len = seq_len
+        data_dir = data_dir or DATA_DIR
+        df = pd.read_csv(os.path.join(data_dir, "MIMIC_gib_physionet.csv"))
+        df = df[df["label"] == split].copy()
+
+        self.patients = []
+        for hadm_id, group in df.groupby("HADM_ID"):
+            group = group.sort_values("TIME_FROM_ADM")
+            features = group[self.FEATURES].values.astype(np.float32)
+            target = int(group[self.TARGET].iloc[0])
+            self.patients.append((features, target))
+
+    def __len__(self):
+        return len(self.patients)
+
+    def __getitem__(self, idx):
+        features, target = self.patients[idx]
+        L = features.shape[0]
+        if L >= self.seq_len:
+            x = features[:self.seq_len]
+        else:
+            x = np.zeros((self.seq_len, features.shape[1]), dtype=np.float32)
+            x[:L] = features
+        return torch.from_numpy(x), torch.tensor(target, dtype=torch.float32)
+
+
 def get_dataloaders(dataset_name="sepsis", batch_size=64, seq_len=48):
     """Get train/val/test dataloaders."""
-    cls = ICUSepsisDataset if dataset_name == "sepsis" else ICUCardiacArrestDataset
+    if dataset_name == "sepsis":
+        cls = ICUSepsisDataset
+    elif dataset_name == "cardiac_arrest":
+        cls = ICUCardiacArrestDataset
+    elif dataset_name == "gib":
+        cls = MIMICGIBDataset
+    else:
+        raise ValueError(f"Unknown dataset: {dataset_name}")
     train_ds = cls("train", seq_len=seq_len)
     val_ds = cls("val", seq_len=seq_len)
     test_ds = cls("test", seq_len=seq_len)
