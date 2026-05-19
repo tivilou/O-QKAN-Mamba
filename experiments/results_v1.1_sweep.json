@@ -1,0 +1,56 @@
+{
+  "v1.0_baseline": {
+    "test_auroc": 0.8594311992142156,
+    "best_val": 0.8651311346754029,
+    "params": 13300,
+    "name": "v1.0_baseline",
+    "latent_dim": 16,
+    "seq_len": 48,
+    "reps": 6
+  },
+  "v1.1a_dim32": {
+    "test_auroc": 0.8601526922046613,
+    "best_val": 0.8720182146702925,
+    "params": 14660,
+    "name": "v1.1a_dim32",
+    "latent_dim": 32,
+    "seq_len": 48,
+    "reps": 6
+  },
+  "v1.1b_seq72": {
+    "test_auroc": 0.9174176265738012,
+    "best_val": 0.9270372871456991,
+    "params": 13300,
+    "name": "v1.1b_seq72",
+    "latent_dim": 16,
+    "seq_len": 72,
+    "reps": 6
+  },
+  "v1.1c_dim32_seq72": {
+    "test_auroc": 0.9171086704170014,
+    "best_val": 0.9222970013323356,
+    "params": 14660,
+    "name": "v1.1c_dim32_seq72",
+    "latent_dim": 32,
+    "seq_len": 72,
+    "reps": 6
+  },
+  "v1.1d_dim32_reps9": {
+    "test_auroc": 0.8469934815608537,
+    "best_val": 0.8587213228449928,
+    "params": 14906,
+    "name": "v1.1d_dim32_reps9",
+    "latent_dim": 32,
+    "seq_len": 48,
+    "reps": 9
+  },
+  "v1.1e_dim64": {
+    "test_auroc": 0.8573064559335655,
+    "best_val": 0.8692193973462795,
+    "params": 17380,
+    "name": "v1.1e_dim64",
+    "latent_dim": 64,
+    "seq_len": 48,
+    "reps": 6
+  }
+}

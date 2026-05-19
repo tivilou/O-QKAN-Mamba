@@ -1,0 +1,55 @@
+03:16:31 | ============================================================
+03:16:31 | v1.1 HYPERPARAMETER SWEEP (DEVICE=cuda)
+03:16:31 | ============================================================
+03:16:31 | 
+03:16:31 | Config: v1.0_baseline (latent=16, seq=48, reps=6)
+03:18:13 |   Params: 13300
+03:21:45 |   Epoch 10 | loss=0.1789 | val_auroc=0.8532
+03:23:47 |   Early stop at epoch 16
+03:23:49 |   >> Test AUROC: 0.8594 (params=13300)
+03:23:49 | 
+03:23:49 | Config: v1.1a_dim32 (latent=32, seq=48, reps=6)
+03:25:24 |   Params: 14660
+03:29:14 |   Epoch 10 | loss=0.1799 | val_auroc=0.8665
+03:32:20 |   Early stop at epoch 18
+03:32:22 |   >> Test AUROC: 0.8602 (params=14660)
+03:32:22 | 
+03:32:22 | Config: v1.1b_seq72 (latent=16, seq=72, reps=6)
+03:34:00 |   Params: 13300
+03:37:55 |   Epoch 10 | loss=0.1480 | val_auroc=0.9185
+03:41:46 |   Epoch 20 | loss=0.1306 | val_auroc=0.9249
+03:45:14 |   Early stop at epoch 29
+03:45:16 |   >> Test AUROC: 0.9174 (params=13300)
+03:45:16 | 
+03:45:16 | Config: v1.1c_dim32_seq72 (latent=32, seq=72, reps=6)
+03:46:51 |   Params: 14660
+03:51:01 |   Epoch 10 | loss=0.1462 | val_auroc=0.9172
+03:55:09 |   Epoch 20 | loss=0.1322 | val_auroc=0.9202
+03:59:13 |   Epoch 30 | loss=0.1214 | val_auroc=0.9185
+04:01:14 |   Early stop at epoch 35
+04:01:16 |   >> Test AUROC: 0.9171 (params=14660)
+04:01:16 | 
+04:01:16 | Config: v1.1d_dim32_reps9 (latent=32, seq=48, reps=9)
+04:02:55 |   Params: 14906
+04:07:07 |   Epoch 10 | loss=0.1774 | val_auroc=0.8561
+04:10:01 |   Early stop at epoch 17
+04:10:03 |   >> Test AUROC: 0.8470 (params=14906)
+04:10:03 | 
+04:10:03 | Config: v1.1e_dim64 (latent=64, seq=48, reps=6)
+04:11:38 |   Params: 17380
+04:15:44 |   Epoch 10 | loss=0.1761 | val_auroc=0.8534
+04:18:09 |   Early stop at epoch 16
+04:18:11 |   >> Test AUROC: 0.8573 (params=17380)
+04:18:11 | 
+04:18:11 | ============================================================
+04:18:11 | SWEEP RESULTS
+04:18:11 | ============================================================
+04:18:11 | Config                    AUROC      Params     latent   seq    reps
+04:18:11 | -----------------------------------------------------------------
+04:18:11 | v1.1b_seq72               0.9174    13300      16       72     6
+04:18:11 | v1.1c_dim32_seq72         0.9171    14660      32       72     6
+04:18:11 | v1.1a_dim32               0.8602    14660      32       48     6
+04:18:11 | v1.0_baseline             0.8594    13300      16       48     6
+04:18:11 | v1.1e_dim64               0.8573    17380      64       48     6
+04:18:11 | v1.1d_dim32_reps9         0.8470    14906      32       48     9
+04:18:11 | Done.
