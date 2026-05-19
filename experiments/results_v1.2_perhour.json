@@ -1,0 +1,38 @@
+{
+  "LSTM": {
+    "test_auroc": 0.7757846537285817,
+    "test_auprc": 0.06958170419287554,
+    "best_val_auroc": 0.7818159748348555,
+    "params": 58945
+  },
+  "GRU": {
+    "test_auroc": 0.7889258057594727,
+    "test_auprc": 0.07450358725214759,
+    "best_val_auroc": 0.7904959956010538,
+    "params": 44225
+  },
+  "Transformer": {
+    "test_auroc": 0.7906125881767462,
+    "test_auprc": 0.08372311302156113,
+    "best_val_auroc": 0.8003914855398786,
+    "params": 70785
+  },
+  "TCN": {
+    "test_auroc": 0.7685839390265418,
+    "test_auprc": 0.06342165980538575,
+    "best_val_auroc": 0.773311746745653,
+    "params": 43713
+  },
+  "Original_DARUAN": {
+    "test_auroc": 0.775487841303216,
+    "test_auprc": 0.06457440122045321,
+    "best_val_auroc": 0.7838076649502931,
+    "params": 6823
+  },
+  "OPFA_QKAN_Mamba": {
+    "test_auroc": 0.7724829265085142,
+    "test_auprc": 0.06291971793491016,
+    "best_val_auroc": 0.7927026883316507,
+    "params": 13300
+  }
+}

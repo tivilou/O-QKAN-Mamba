@@ -1,0 +1,98 @@
+{
+  "sepsis": {
+    "LSTM": {
+      "test_auroc": 0.701953994558496,
+      "test_auprc": 0.18050730343132806,
+      "params": 13345
+    },
+    "GRU": {
+      "test_auroc": 0.6958941380163245,
+      "test_auprc": 0.18052962980025897,
+      "params": 10017
+    },
+    "Transformer": {
+      "test_auroc": 0.6574325995547861,
+      "test_auprc": 0.13061840854642934,
+      "params": 18817
+    },
+    "TCN": {
+      "test_auroc": 0.3842443729903537,
+      "test_auprc": 0.06296815439863829,
+      "params": 6657
+    },
+    "Original_DARUAN": {
+      "test_auroc": 0.5667820925055651,
+      "test_auprc": 0.13095094436325633,
+      "params": 473
+    },
+    "OPFA_QKAN_Mamba": {
+      "test_auroc": 0.6079643828839971,
+      "test_auprc": 0.13648018674291215,
+      "params": 1008
+    }
+  },
+  "cardiac_arrest": {
+    "LSTM": {
+      "test_auroc": 0.7241271158956263,
+      "test_auprc": 0.11278751428953816,
+      "params": 13345
+    },
+    "GRU": {
+      "test_auroc": 0.7299874944779511,
+      "test_auprc": 0.13192177897592694,
+      "params": 10017
+    },
+    "Transformer": {
+      "test_auroc": 0.7297479276468131,
+      "test_auprc": 0.12906667175226877,
+      "params": 18817
+    },
+    "TCN": {
+      "test_auroc": 0.5654794873403277,
+      "test_auprc": 0.06659765375504957,
+      "params": 6657
+    },
+    "Original_DARUAN": {
+      "test_auroc": 0.6733803213532122,
+      "test_auprc": 0.08404416626254373,
+      "params": 473
+    },
+    "OPFA_QKAN_Mamba": {
+      "test_auroc": 0.7179444231644444,
+      "test_auprc": 0.10801389649301156,
+      "params": 1008
+    }
+  },
+  "gib": {
+    "LSTM": {
+      "test_auroc": 0.7688912429378532,
+      "test_auprc": 0.2767607321846961,
+      "params": 13345
+    },
+    "GRU": {
+      "test_auroc": 0.8333333333333334,
+      "test_auprc": 0.3177584677314,
+      "params": 10017
+    },
+    "Transformer": {
+      "test_auroc": 0.8096751412429379,
+      "test_auprc": 0.38086578356622164,
+      "params": 18817
+    },
+    "TCN": {
+      "test_auroc": 0.479343220338983,
+      "test_auprc": 0.09029891235773588,
+      "params": 6657
+    },
+    "Original_DARUAN": {
+      "test_auroc": 0.7341101694915255,
+      "test_auprc": 0.20831747717095195,
+      "params": 473
+    },
+    "OPFA_QKAN_Mamba": {
+      "test_auroc": 0.7983757062146892,
+      "test_auprc": 0.2608676713948297,
+      "params": 1008
+    }
+  }
+}
