@@ -1,0 +1,176 @@
+{
+  "sepsis": {
+    "exp1_NoGate+Conv1d": {
+      "auroc": 0.39055157061587936,
+      "params": 81
+    },
+    "exp1_Sigmoid+Conv1d": {
+      "auroc": 0.5341330695028443,
+      "params": 101
+    },
+    "exp1_MLP+Conv1d": {
+      "auroc": 0.5331437051694286,
+      "params": 157
+    },
+    "exp1_OrigDARUAN+Conv1d": {
+      "auroc": 0.4027331189710611,
+      "params": 473
+    },
+    "exp1_OPFA+Conv1d": {
+      "auroc": 0.5516942864209745,
+      "params": 524
+    },
+    "exp2_OPFA+Identity": {
+      "auroc": 0.3858520900321544,
+      "params": 456
+    },
+    "exp2_OPFA+Conv1d": {
+      "auroc": 0.5930002473410834,
+      "params": 524
+    },
+    "exp2_OPFA+Attention": {
+      "auroc": 0.6335641850111304,
+      "params": 536
+    },
+    "exp2_OPFA+GRU": {
+      "auroc": 0.4395869403907989,
+      "params": 576
+    },
+    "exp2_OPFA+Mamba": {
+      "auroc": 0.40168191936680686,
+      "params": 732
+    },
+    "exp3_OPFA_Full": {
+      "auroc": 0.5910215186742519,
+      "params": 524
+    },
+    "exp3_OPFA_NoMultiAxis": {
+      "auroc": 0.4926416027702202,
+      "params": 524
+    },
+    "exp3_OPFA_NoPartition": {
+      "auroc": 0.6187237200098936,
+      "params": 524
+    },
+    "exp3_OPFA_NoAdaptMeasure": {
+      "auroc": 0.3912935938659411,
+      "params": 524
+    }
+  },
+  "cardiac_arrest": {
+    "exp1_NoGate+Conv1d": {
+      "auroc": 0.5378689095638549,
+      "params": 81
+    },
+    "exp1_Sigmoid+Conv1d": {
+      "auroc": 0.546937081341948,
+      "params": 101
+    },
+    "exp1_MLP+Conv1d": {
+      "auroc": 0.5466488003640884,
+      "params": 157
+    },
+    "exp1_OrigDARUAN+Conv1d": {
+      "auroc": 0.686283898039289,
+      "params": 473
+    },
+    "exp1_OPFA+Conv1d": {
+      "auroc": 0.6891209965980175,
+      "params": 524
+    },
+    "exp2_OPFA+Identity": {
+      "auroc": 0.6723252930522949,
+      "params": 456
+    },
+    "exp2_OPFA+Conv1d": {
+      "auroc": 0.685562194619022,
+      "params": 524
+    },
+    "exp2_OPFA+Attention": {
+      "auroc": 0.6776317984595652,
+      "params": 536
+    },
+    "exp2_OPFA+GRU": {
+      "auroc": 0.6843900521708491,
+      "params": 576
+    },
+    "exp2_OPFA+Mamba": {
+      "auroc": 0.6867219917012448,
+      "params": 732
+    },
+    "exp3_OPFA_Full": {
+      "auroc": 0.6909934883199491,
+      "params": 524
+    },
+    "exp3_OPFA_NoMultiAxis": {
+      "auroc": 0.6931702766296216,
+      "params": 524
+    },
+    "exp3_OPFA_NoPartition": {
+      "auroc": 0.6865064482849284,
+      "params": 524
+    },
+    "exp3_OPFA_NoAdaptMeasure": {
+      "auroc": 0.6889087897670931,
+      "params": 524
+    }
+  },
+  "gib": {
+    "exp1_NoGate+Conv1d": {
+      "auroc": 0.5287782485875707,
+      "params": 81
+    },
+    "exp1_Sigmoid+Conv1d": {
+      "auroc": 0.516066384180791,
+      "params": 101
+    },
+    "exp1_MLP+Conv1d": {
+      "auroc": 0.5165960451977402,
+      "params": 157
+    },
+    "exp1_OrigDARUAN+Conv1d": {
+      "auroc": 0.6426553672316384,
+      "params": 473
+    },
+    "exp1_OPFA+Conv1d": {
+      "auroc": 0.6260593220338982,
+      "params": 524
+    },
+    "exp2_OPFA+Identity": {
+      "auroc": 0.7605049435028247,
+      "params": 456
+    },
+    "exp2_OPFA+Conv1d": {
+      "auroc": 0.7752471751412429,
+      "params": 524
+    },
+    "exp2_OPFA+Attention": {
+      "auroc": 0.7528248587570621,
+      "params": 536
+    },
+    "exp2_OPFA+GRU": {
+      "auroc": 0.8070268361581922,
+      "params": 576
+    },
+    "exp2_OPFA+Mamba": {
+      "auroc": 0.677877824858757,
+      "params": 732
+    },
+    "exp3_OPFA_Full": {
+      "auroc": 0.7409957627118644,
+      "params": 524
+    },
+    "exp3_OPFA_NoMultiAxis": {
+      "auroc": 0.7711864406779662,
+      "params": 524
+    },
+    "exp3_OPFA_NoPartition": {
+      "auroc": 0.7665960451977402,
+      "params": 524
+    },
+    "exp3_OPFA_NoAdaptMeasure": {
+      "auroc": 0.6266772598870056,
+      "params": 524
+    }
+  }
+}

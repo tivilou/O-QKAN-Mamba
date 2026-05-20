@@ -1,0 +1,138 @@
+05:42:25 | ============================================================
+05:42:25 | P0 on Clinical Time Series (DEVICE=cuda)
+05:42:25 | ============================================================
+05:42:25 | 
+============================================================
+05:42:25 | Dataset: sepsis
+05:42:25 | ============================================================
+05:42:28 |   Train=2689, Val=336, Test=337
+05:42:28 | 
+  [Exp1: Gate Comparison]
+05:42:30 |     NoGate+Conv1d                AUROC=0.3906 (81)
+05:42:32 |     Sigmoid+Conv1d               AUROC=0.5341 (101)
+05:42:34 |     MLP+Conv1d                   AUROC=0.5331 (157)
+05:42:41 |     OrigDARUAN+Conv1d            AUROC=0.4027 (473)
+05:42:58 |     OPFA+Conv1d                  AUROC=0.5517 (524)
+05:42:58 | 
+  [Exp2: Mixer Comparison]
+05:43:06 |     OPFA+Identity                AUROC=0.3859 (456)
+05:43:34 |     OPFA+Conv1d                  AUROC=0.5930 (524)
+05:44:01 |     OPFA+Attention               AUROC=0.6336 (536)
+05:44:13 |     OPFA+GRU                     AUROC=0.4396 (576)
+05:44:22 |     OPFA+Mamba                   AUROC=0.4017 (732)
+05:44:22 | 
+  [Exp3: OPFA Ablation]
+05:44:35 |     OPFA_Full                    AUROC=0.5910 (524)
+05:44:49 |     OPFA_NoMultiAxis             AUROC=0.4926 (524)
+05:45:15 |     OPFA_NoPartition             AUROC=0.6187 (524)
+05:45:22 |     OPFA_NoAdaptMeasure          AUROC=0.3913 (524)
+05:45:22 | 
+============================================================
+05:45:22 | Dataset: cardiac_arrest
+05:45:22 | ============================================================
+05:46:07 |   Train=51671, Val=6459, Test=6459
+05:46:07 | 
+  [Exp1: Gate Comparison]
+05:46:51 |     NoGate+Conv1d                AUROC=0.5379 (81)
+05:47:28 |     Sigmoid+Conv1d               AUROC=0.5469 (101)
+05:48:35 |     MLP+Conv1d                   AUROC=0.5466 (157)
+05:54:48 |     OrigDARUAN+Conv1d            AUROC=0.6863 (473)
+06:03:14 |     OPFA+Conv1d                  AUROC=0.6891 (524)
+06:03:14 | 
+  [Exp2: Mixer Comparison]
+06:10:21 |     OPFA+Identity                AUROC=0.6723 (456)
+06:17:07 |     OPFA+Conv1d                  AUROC=0.6856 (524)
+06:20:59 |     OPFA+Attention               AUROC=0.6776 (536)
+06:29:29 |     OPFA+GRU                     AUROC=0.6844 (576)
+06:38:18 |     OPFA+Mamba                   AUROC=0.6867 (732)
+06:38:18 | 
+  [Exp3: OPFA Ablation]
+06:46:06 |     OPFA_Full                    AUROC=0.6910 (524)
+06:53:56 |     OPFA_NoMultiAxis             AUROC=0.6932 (524)
+06:59:55 |     OPFA_NoPartition             AUROC=0.6865 (524)
+07:06:13 |     OPFA_NoAdaptMeasure          AUROC=0.6889 (524)
+07:06:13 | 
+============================================================
+07:06:13 | Dataset: gib
+07:06:13 | ============================================================
+07:06:15 |   Train=2082, Val=260, Test=260
+07:06:15 | 
+  [Exp1: Gate Comparison]
+07:06:15 |     NoGate+Conv1d                AUROC=0.5288 (81)
+07:06:16 |     Sigmoid+Conv1d               AUROC=0.5161 (101)
+07:06:17 |     MLP+Conv1d                   AUROC=0.5166 (157)
+07:06:25 |     OrigDARUAN+Conv1d            AUROC=0.6427 (473)
+07:06:30 |     OPFA+Conv1d                  AUROC=0.6261 (524)
+07:06:30 | 
+  [Exp2: Mixer Comparison]
+07:06:35 |     OPFA+Identity                AUROC=0.7605 (456)
+07:06:51 |     OPFA+Conv1d                  AUROC=0.7752 (524)
+07:06:59 |     OPFA+Attention               AUROC=0.7528 (536)
+07:07:13 |     OPFA+GRU                     AUROC=0.8070 (576)
+07:07:19 |     OPFA+Mamba                   AUROC=0.6779 (732)
+07:07:19 | 
+  [Exp3: OPFA Ablation]
+07:07:30 |     OPFA_Full                    AUROC=0.7410 (524)
+07:07:51 |     OPFA_NoMultiAxis             AUROC=0.7712 (524)
+07:08:05 |     OPFA_NoPartition             AUROC=0.7666 (524)
+07:08:10 |     OPFA_NoAdaptMeasure          AUROC=0.6267 (524)
+07:08:10 | 
+============================================================
+07:08:10 | CROSS-DATASET SUMMARY
+07:08:10 | ============================================================
+07:08:10 | 
+  [sepsis]
+07:08:10 |   Config                         AUROC    Params
+07:08:10 |   ------------------------------------------------
+07:08:10 |   exp2_OPFA+Attention            0.6336   536
+07:08:10 |   exp3_OPFA_NoPartition          0.6187   524
+07:08:10 |   exp2_OPFA+Conv1d               0.5930   524
+07:08:10 |   exp3_OPFA_Full                 0.5910   524
+07:08:10 |   exp1_OPFA+Conv1d               0.5517   524
+07:08:10 |   exp1_Sigmoid+Conv1d            0.5341   101
+07:08:10 |   exp1_MLP+Conv1d                0.5331   157
+07:08:10 |   exp3_OPFA_NoMultiAxis          0.4926   524
+07:08:10 |   exp2_OPFA+GRU                  0.4396   576
+07:08:10 |   exp1_OrigDARUAN+Conv1d         0.4027   473
+07:08:10 |   exp2_OPFA+Mamba                0.4017   732
+07:08:10 |   exp3_OPFA_NoAdaptMeasure       0.3913   524
+07:08:10 |   exp1_NoGate+Conv1d             0.3906   81
+07:08:10 |   exp2_OPFA+Identity             0.3859   456
+07:08:10 | 
+  [cardiac_arrest]
+07:08:10 |   Config                         AUROC    Params
+07:08:10 |   ------------------------------------------------
+07:08:10 |   exp3_OPFA_NoMultiAxis          0.6932   524
+07:08:10 |   exp3_OPFA_Full                 0.6910   524
+07:08:10 |   exp1_OPFA+Conv1d               0.6891   524
+07:08:10 |   exp3_OPFA_NoAdaptMeasure       0.6889   524
+07:08:10 |   exp2_OPFA+Mamba                0.6867   732
+07:08:10 |   exp3_OPFA_NoPartition          0.6865   524
+07:08:10 |   exp1_OrigDARUAN+Conv1d         0.6863   473
+07:08:10 |   exp2_OPFA+Conv1d               0.6856   524
+07:08:10 |   exp2_OPFA+GRU                  0.6844   576
+07:08:10 |   exp2_OPFA+Attention            0.6776   536
+07:08:10 |   exp2_OPFA+Identity             0.6723   456
+07:08:10 |   exp1_Sigmoid+Conv1d            0.5469   101
+07:08:10 |   exp1_MLP+Conv1d                0.5466   157
+07:08:10 |   exp1_NoGate+Conv1d             0.5379   81
+07:08:10 | 
+  [gib]
+07:08:10 |   Config                         AUROC    Params
+07:08:10 |   ------------------------------------------------
+07:08:10 |   exp2_OPFA+GRU                  0.8070   576
+07:08:10 |   exp2_OPFA+Conv1d               0.7752   524
+07:08:10 |   exp3_OPFA_NoMultiAxis          0.7712   524
+07:08:10 |   exp3_OPFA_NoPartition          0.7666   524
+07:08:10 |   exp2_OPFA+Identity             0.7605   456
+07:08:10 |   exp2_OPFA+Attention            0.7528   536
+07:08:10 |   exp3_OPFA_Full                 0.7410   524
+07:08:10 |   exp2_OPFA+Mamba                0.6779   732
+07:08:10 |   exp1_OrigDARUAN+Conv1d         0.6427   473
+07:08:10 |   exp3_OPFA_NoAdaptMeasure       0.6267   524
+07:08:10 |   exp1_OPFA+Conv1d               0.6261   524
+07:08:10 |   exp1_NoGate+Conv1d             0.5288   81
+07:08:10 |   exp1_MLP+Conv1d                0.5166   157
+07:08:10 |   exp1_Sigmoid+Conv1d            0.5161   101
+07:08:10 | 
+Done. Saved to results_p0_cts.json

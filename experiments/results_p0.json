@@ -1,0 +1,83 @@
+{
+  "exp1_OrigDARUAN+Conv1d": {
+    "test_auroc": 0.7788500353544862,
+    "test_auprc": 0.06283384941448503,
+    "best_val": 0.787467972930102,
+    "params": 6823
+  },
+  "exp1_OPFA+Conv1d": {
+    "test_auroc": 0.7575316344155565,
+    "test_auprc": 0.06398637400131613,
+    "best_val": 0.7760209737772461,
+    "params": 6874
+  },
+  "exp2_OPFA+Identity": {
+    "test_auroc": 0.750128093690197,
+    "test_auprc": 0.05282014429677412,
+    "best_val": 0.7829247044013534,
+    "params": 2216
+  },
+  "exp2_OPFA+Attention": {
+    "test_auroc": 0.760025070929268,
+    "test_auprc": 0.05493301579180978,
+    "best_val": 0.7774718912355604,
+    "params": 9356
+  },
+  "exp2_OPFA+GRU": {
+    "test_auroc": 0.7726398295949605,
+    "test_auprc": 0.06814797314506073,
+    "best_val": 0.7909917807083877,
+    "params": 9356
+  },
+  "exp2_OPFA+Mamba": {
+    "test_auroc": 0.7635673719336599,
+    "test_auprc": 0.0730864835388354,
+    "best_val": 0.7703577977721605,
+    "params": 7758
+  },
+  "exp3_OPFA_NoMultiAxis": {
+    "test_auroc": 0.7674203307458841,
+    "test_auprc": 0.0633408565735073,
+    "best_val": 0.7839759184336694,
+    "params": 6874
+  },
+  "exp3_OPFA_NoPartition": {
+    "test_auroc": 0.7589827944965211,
+    "test_auprc": 0.059185558927260885,
+    "best_val": 0.7789108749781063,
+    "params": 6874
+  },
+  "exp3_OPFA_NoAdaptMeasure": {
+    "test_auroc": 0.7633881547114283,
+    "test_auprc": 0.0599279501090043,
+    "best_val": 0.7821492593092464,
+    "params": 6874
+  },
+  "exp1_NoGate+Conv1d": {
+    "test_auroc": 0.749,
+    "test_auprc": 0.0511,
+    "params": 4761
+  },
+  "exp1_Sigmoid+Conv1d": {
+    "test_auroc": 0.7639,
+    "test_auprc": 0.061,
+    "params": 5951
+  },
+  "exp1_MLP+Conv1d": {
+    "test_auroc": 0.7717,
+    "test_auprc": 0.0644,
+    "params": 9487
+  },
+  "exp2_OPFA+Conv1d": {
+    "test_auroc": 0.7575316344155565,
+    "test_auprc": 0.06398637400131613,
+    "best_val": 0.7760209737772461,
+    "params": 6874
+  },
+  "exp3_OPFA_Full": {
+    "test_auroc": 0.7575316344155565,
+    "test_auprc": 0.06398637400131613,
+    "best_val": 0.7760209737772461,
+    "params": 6874
+  }
+}

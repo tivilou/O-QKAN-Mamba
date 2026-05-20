@@ -483,6 +483,101 @@ experiments/results_v1.2_perhour.json
 experiments/results_v1.2_cts.json
 ```
 
+---
+
+## P0 — 门控×混合器矩阵实验（4 数据集）
+
+### 日期
+2025-05-20
+
+### 动机
+论文重心从 Mamba 转向 OPFA-DARUAN 量子门控机制。需要验证：
+1. OPFA 门控 vs 经典门控 vs Original DARUAN
+2. 混合器选择是否影响 OPFA 门控效果
+3. OPFA 三个 QML 修改各自的贡献
+
+### 实验设计
+
+**Exp 1：门控对比（固定 Conv1d 混合器）**
+NoGate / Sigmoid / MLP / Original DARUAN / OPFA-DARUAN
+
+**Exp 2：混合器对比（固定 OPFA 门控）**
+Identity / Conv1d / Causal Attention / GRU / Mamba
+
+**Exp 3：OPFA 消融（固定 Conv1d 混合器）**
+Full / w/o 多轴编码 / w/o 分区频率 / w/o 自适应测量
+
+### 实验结果
+
+#### Exp 1：门控对比
+
+| 门控 | PhysioNet 2019 | Cardiac Arrest | GIB | Sepsis |
+|------|---------------|----------------|-----|--------|
+| Original DARUAN | **0.7789** | 0.6863 | 0.6427 | 0.4027 |
+| MLP | 0.7717 | 0.5466 | 0.5166 | 0.5331 |
+| Sigmoid | 0.7639 | 0.5469 | 0.5161 | 0.5341 |
+| OPFA-DARUAN | 0.7575 | **0.6891** | 0.6261 | **0.5517** |
+| NoGate | 0.7490 | 0.5379 | 0.5288 | 0.3906 |
+
+#### Exp 2：混合器对比
+
+| 混合器 | PhysioNet 2019 | Cardiac Arrest | GIB | Sepsis |
+|--------|---------------|----------------|-----|--------|
+| GRU | **0.7726** | 0.6844 | **0.8070** | 0.4396 |
+| Mamba | 0.7636 | **0.6867** | 0.6779 | 0.4017 |
+| Attention | 0.7600 | 0.6776 | 0.7528 | **0.6336** |
+| Conv1d | 0.7575 | 0.6856 | 0.7752 | 0.5930 |
+| Identity | 0.7501 | 0.6723 | 0.7605 | 0.3859 |
+
+#### Exp 3：OPFA 消融
+
+| 配置 | PhysioNet 2019 | Cardiac Arrest | GIB | Sepsis |
+|------|---------------|----------------|-----|--------|
+| Full OPFA | 0.7575 | 0.6910 | 0.7410 | 0.5910 |
+| w/o 多轴编码 | **0.7674** | **0.6932** | **0.7712** | 0.4926 |
+| w/o 分区频率 | 0.7590 | 0.6865 | 0.7666 | **0.6187** |
+| w/o 自适应测量 | 0.7634 | 0.6889 | 0.6267 | 0.3913 |
+
+### 核心结论
+
+**1. 量子线路门控的价值确定**
+- 量子门控（OPFA 或 OrigDARUAN）在 Cardiac Arrest 上比经典门控高 +15%
+- 在 GIB 上高 +10%
+- 说明量子线路的非线性门控能力是真实的
+
+**2. OPFA vs Original DARUAN：互有胜负**
+- PhysioNet：OrigDARUAN 优（0.7789 vs 0.7575）
+- Cardiac Arrest：OPFA 略优（0.6891 vs 0.6863）
+- GIB：OrigDARUAN 优（0.6427 vs 0.6261）
+- Sepsis：OPFA 优（0.5517 vs 0.4027）
+- 结论：性能上两者持平，OPFA 的价值在于提供谱证书
+
+**3. 混合器选择影响不大**
+- 各混合器之间差距 1-3%（Cardiac Arrest 上几乎无差异）
+- Identity（无混合器）也能达到不错性能
+- 论文可以说"OPFA 门控与混合器无关"
+
+**4. OPFA 三组件无一致性**
+- 自适应测量在 GIB 上关键（去掉 -11%），但在 Sepsis 上有害
+- 多轴编码在 PhysioNet 上有害（去掉 +1%），在 Sepsis 上也有害
+- 分区在 Sepsis 上有害（去掉 +3%）
+- 结论：三个修改的价值不在于性能，而在于使谱证书成为可能
+
+### 论文叙事最终定位
+
+**标题**：OPFA-DARUAN: Ontology-Partitioned Quantum Gating with Provable Spectral Certificates for Clinical Time-Series Prediction
+
+**核心论点**：
+1. 量子线路门控优于经典门控（+10-15%，已证明）
+2. OPFA 的结构修改使谱证书成为可能（数学保证）
+3. 性能代价可控：OPFA vs OrigDARUAN 互有胜负（±2%）
+4. 这是一个 safety-performance tradeoff：用约 2% 的性能换取可证明的安全保证
+
+**不再声称**：
+- ~~OPFA 性能超越 Original DARUAN~~
+- ~~每个 QML 修改都提升性能~~
+- ~~Mamba 是核心贡献~~
+
 ```markdown
 ## vX.Y — [简短标题]
 

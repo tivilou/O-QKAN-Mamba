@@ -280,3 +280,29 @@ class OPFADaruan(nn.Module):
         }
 
         return out, spectral_info
+
+    def forward_fixed_measure(
+        self, x: torch.Tensor, concept_emb: torch.Tensor
+    ) -> torch.Tensor:
+        """Forward with fixed sigma_z measurement (ablation: no adaptive measure)."""
+        B = x.shape[0]
+        w_mod = self.compute_modulated_weights(concept_emb)
+        psi = StateVector(B, self.dim, device=x.device, dtype=torch.complex64)
+        psi.h()
+        for l in range(self.reps):
+            psi.rz(self.theta[:, l, 0])
+            psi.ry(self.theta[:, l, 1])
+            encoded = x * w_mod[:, l:l + 1]
+            axis = self._encoding_axes[l]
+            if axis == "z":
+                gate = TorchGates.rz_gate(encoded, dtype=torch.complex64)
+            elif axis == "x":
+                gate = TorchGates.rx_gate(encoded, dtype=torch.complex64)
+            else:
+                gate = TorchGates.ry_gate(encoded, dtype=torch.complex64)
+            psi.state = torch.einsum("mnbi,bin->bim", gate, psi.state)
+        psi.rz(self.theta[:, self.reps, 0])
+        psi.ry(self.theta[:, self.reps, 1])
+        postacts = psi.measure_z()
+        out = postacts * self.postact_weight + self.postact_bias
+        return out
