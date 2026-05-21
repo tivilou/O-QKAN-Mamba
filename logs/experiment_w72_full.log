@@ -1,0 +1,92 @@
+00:25:48 | ============================================================
+00:25:48 | W=72 FULL EXPERIMENT (DEVICE=cuda)
+00:25:48 | ============================================================
+00:25:48 | 
+Loading PhysioNet 2019 with window=72...
+00:28:00 | Loaded in 132s
+00:28:00 | 
+[Remaining P0 configs]
+00:28:01 |   [exp1_MLP+Conv1d] params=9487
+00:29:27 |     Ep  1 | loss=0.4639 | val=0.7521 | 87s
+00:40:59 |     >> AUROC=0.7478, AUPRC=0.0572
+00:40:59 |   [exp2_OPFA+Identity] params=2216
+00:46:45 |     Ep  1 | loss=0.4559 | val=0.8026 | 346s
+01:38:48 |     Ep 10 | loss=0.3849 | val=0.7874 | 352s
+01:50:59 |     >> AUROC=0.8091, AUPRC=0.0859
+01:50:59 |   [exp2_OPFA+Attention] params=9356
+01:57:15 |     Ep  1 | loss=0.4338 | val=0.7861 | 376s
+02:53:21 |     Ep 10 | loss=0.3416 | val=0.7650 | 378s
+02:59:55 |     >> AUROC=0.7920, AUPRC=0.0793
+02:59:55 |   [exp2_OPFA+Mamba] params=7758
+03:05:57 |     Ep  1 | loss=0.4431 | val=0.7738 | 362s
+03:55:09 |     >> AUROC=0.7949, AUPRC=0.0821
+03:55:09 |   [exp3_NoMultiAxis] params=6874
+04:01:10 |     Ep  1 | loss=0.4476 | val=0.7832 | 361s
+04:56:33 |     Ep 10 | loss=0.3594 | val=0.7774 | 371s
+04:56:50 |     >> AUROC=0.7994, AUPRC=0.0796
+04:56:50 |   [exp3_NoPartition] params=6874
+05:03:09 |     Ep  1 | loss=0.4602 | val=0.7627 | 379s
+05:58:12 |     Ep 10 | loss=0.4515 | val=0.7887 | 357s
+06:16:27 |     >> AUROC=0.7861, AUPRC=0.0919
+06:16:27 |   [exp3_NoAdaptMeasure] params=6874
+06:22:01 |     Ep  1 | loss=0.4482 | val=0.7892 | 333s
+07:00:57 |     >> AUROC=0.7910, AUPRC=0.0897
+07:00:57 | 
+[Classical Baselines]
+07:00:58 |   [baseline_LSTM] params=58945
+07:02:34 |     Ep  1 | loss=0.3908 | val=0.8063 | 97s
+07:15:22 |     >> AUROC=0.8111, AUPRC=0.0853
+07:15:22 |   [baseline_GRU] params=44225
+07:16:54 |     Ep  1 | loss=0.3879 | val=0.8174 | 92s
+07:27:58 |     >> AUROC=0.8271, AUPRC=0.1115
+07:27:58 |   [baseline_Transformer] params=73857
+07:30:06 |     Ep  1 | loss=0.3966 | val=0.8184 | 128s
+07:45:04 |     >> AUROC=0.8185, AUPRC=0.1011
+07:45:04 |   [baseline_TCN] params=43713
+07:46:36 |     Ep  1 | loss=0.4415 | val=0.7731 | 91s
+07:57:24 |     >> AUROC=0.7679, AUPRC=0.0629
+07:57:24 | 
+============================================================
+07:57:24 | FULL RESULTS (W=72)
+07:57:24 | ============================================================
+07:57:24 | 
+  [Exp1: Gate Comparison]
+07:57:24 |   Config                   AUROC      Params
+07:57:24 |   ------------------------------------------
+07:57:24 |   OPFA+Conv1d              0.7996    6874
+07:57:24 |   OrigDARUAN+Conv1d        0.7970    6823
+07:57:24 |   MLP+Conv1d               0.7478    9487
+07:57:24 |   Sigmoid+Conv1d           0.7462    5951
+07:57:24 |   NoGate+Conv1d            0.7442    4761
+07:57:24 | 
+  [Exp2: Mixer Comparison]
+07:57:24 |   Config                   AUROC      Params
+07:57:24 |   ------------------------------------------
+07:57:24 |   OPFA+GRU                 0.7945    9356
+07:57:24 |   OPFA+Conv1d              0.7996    6874
+07:57:24 |   OPFA+Attention           0.7920    9356
+07:57:24 |   OPFA+Mamba               0.7949    7758
+07:57:24 |   OPFA+Identity            0.8091    2216
+07:57:24 | 
+  [Exp3: OPFA Ablation]
+07:57:24 |   Config                   AUROC      Params
+07:57:24 |   ------------------------------------------
+07:57:24 |   OPFA_Full                0.7996    6874
+07:57:24 |   NoMultiAxis              0.7994    6874
+07:57:24 |   NoPartition              0.7861    6874
+07:57:24 |   NoAdaptMeasure           0.7910    6874
+07:57:24 | 
+  [Classical Baselines]
+07:57:24 |   Config                   AUROC      Params
+07:57:24 |   ------------------------------------------
+07:57:24 |   Transformer              0.8185    73857
+07:57:24 |   GRU                      0.8271    44225
+07:57:24 |   LSTM                     0.8111    58945
+07:57:24 |   TCN                      0.7679    43713
+07:57:24 | 
+  [OPFA vs Best Baseline]
+07:57:24 |   OPFA+Conv1d: 0.7996 (6874 params)
+07:57:24 |   Best baseline: 0.8271
+07:57:24 |   Delta: -0.0275
+07:57:24 | 
+Done.

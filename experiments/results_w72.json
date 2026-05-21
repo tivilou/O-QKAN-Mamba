@@ -1,0 +1,92 @@
+{
+  "exp1_NoGate+Conv1d": {
+    "test_auroc": 0.7442,
+    "test_auprc": 0.0,
+    "params": 4761
+  },
+  "exp1_Sigmoid+Conv1d": {
+    "test_auroc": 0.7462,
+    "test_auprc": 0.0,
+    "params": 5951
+  },
+  "exp1_OrigDARUAN+Conv1d": {
+    "test_auroc": 0.797,
+    "test_auprc": 0.0,
+    "params": 6823
+  },
+  "exp1_OPFA+Conv1d": {
+    "test_auroc": 0.7996,
+    "test_auprc": 0.0,
+    "params": 6874
+  },
+  "exp2_OPFA+GRU": {
+    "test_auroc": 0.7945,
+    "test_auprc": 0.0,
+    "params": 9356
+  },
+  "exp1_MLP+Conv1d": {
+    "test_auroc": 0.7478253261688768,
+    "test_auprc": 0.05724343741318769,
+    "params": 9487
+  },
+  "exp2_OPFA+Identity": {
+    "test_auroc": 0.8090900750078235,
+    "test_auprc": 0.08594213241333988,
+    "params": 2216
+  },
+  "exp2_OPFA+Attention": {
+    "test_auroc": 0.7919550098700401,
+    "test_auprc": 0.07928233946485938,
+    "params": 9356
+  },
+  "exp2_OPFA+Mamba": {
+    "test_auroc": 0.7948997030438228,
+    "test_auprc": 0.08210129266959837,
+    "params": 7758
+  },
+  "exp3_NoMultiAxis": {
+    "test_auroc": 0.7994036940335284,
+    "test_auprc": 0.07957270068519923,
+    "params": 6874
+  },
+  "exp3_NoPartition": {
+    "test_auroc": 0.7861239509501956,
+    "test_auprc": 0.0919152414520801,
+    "params": 6874
+  },
+  "exp3_NoAdaptMeasure": {
+    "test_auroc": 0.7909589330793488,
+    "test_auprc": 0.08965006587187253,
+    "params": 6874
+  },
+  "baseline_LSTM": {
+    "test_auroc": 0.811117904435798,
+    "test_auprc": 0.08533889967803518,
+    "params": 58945
+  },
+  "baseline_GRU": {
+    "test_auroc": 0.8271463625604427,
+    "test_auprc": 0.11152399485189676,
+    "params": 44225
+  },
+  "baseline_Transformer": {
+    "test_auroc": 0.8185307867730992,
+    "test_auprc": 0.10107016009007457,
+    "params": 73857
+  },
+  "baseline_TCN": {
+    "test_auroc": 0.7679425836567108,
+    "test_auprc": 0.06293512798333908,
+    "params": 43713
+  },
+  "exp2_OPFA+Conv1d": {
+    "test_auroc": 0.7996,
+    "test_auprc": 0.0,
+    "params": 6874
+  },
+  "exp3_OPFA_Full": {
+    "test_auroc": 0.7996,
+    "test_auprc": 0.0,
+    "params": 6874
+  }
+}
