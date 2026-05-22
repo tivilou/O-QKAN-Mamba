@@ -1,0 +1,12 @@
+{
+  "OPFA_OntologyRouted": {
+    "auroc": 0.758659314890432,
+    "auprc": 0.05588221063065661,
+    "params": 2248
+  },
+  "OPFA_NoRouting": {
+    "auroc": 0.8116737601539863,
+    "auprc": 0.08546376079634455,
+    "params": 2216
+  }
+}

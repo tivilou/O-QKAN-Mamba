@@ -717,6 +717,50 @@ P0 在 W=24 下 OPFA 不如 OrigDARUAN，消融方向也反了。
 - **参数量**：2,216
 - **PhysioNet 2019 AUROC**：0.8091
 
+---
+
+## P2 — 本体路由实验
+
+### 日期
+2025-05-20
+
+### 动机
+验证真实的本体特征路由是否能让 "Ontology-Partitioned" 标题名副其实。
+将 34 个特征按临床意义分为 3 组，强制路由到对应频段。
+
+### 特征分组（基于 Sepsis-3 临床框架）
+
+- **Infection（10 个）**：Temp, Resp, BaseExcess, pH, PaCO2, Lactate, PTT, WBC, Fibrinogen, Platelets
+- **Hemodynamics（8 个）**：HR, O2Sat, SBP, MAP, DBP, EtCO2, FiO2, SaO2
+- **Organ Function（16 个）**：HCO3, AST, BUN, Alkalinephos, Calcium, Chloride, Creatinine, Bilirubin_direct, Glucose, Magnesium, Phosphate, Potassium, Bilirubin_total, TroponinI, Hct, Hgb
+
+### 实验结果
+
+| 配置 | AUROC | 参数量 |
+|------|-------|--------|
+| OPFA 无路由（原始） | **0.8117** | 2,216 |
+| OPFA 本体路由 | 0.7587 | 2,248 |
+
+**本体路由导致性能下降 -5.3%。**
+
+### 原因分析
+
+强制特征路由限制了跨域交互。脓毒症诊断本身需要跨系统信息（感染 + 血流动力学恶化 + 器官功能障碍），强制分离破坏了这种跨域关联。
+
+### 对论文的影响
+
+**标题调整**：
+- ~~"Ontology-Partitioned Quantum Gating"~~
+- → **"Frequency-Partitioned Quantum Gating"**
+
+**最终标题**：
+> OPFA-DARUAN: Frequency-Partitioned Quantum Gating with Structural Spectral Interpretability for Clinical Time-Series Prediction
+
+**论文叙事**：
+- 频段在结构上是分区的（支撑谱证书的数学保证和可解释性）
+- 特征不按本体强制路由（因为会损失跨域交互）
+- 真实本体路由作为 Future Work 讨论
+
 ```markdown
 ## vX.Y — [简短标题]
 

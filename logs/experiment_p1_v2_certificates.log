@@ -1,0 +1,64 @@
+01:57:19 | ============================================================
+01:57:19 | P1v2: DOMINANT-BAND CERTIFICATE EXPERIMENT
+01:57:19 | ============================================================
+01:57:19 | 
+[Step 1] Training OPFA+Identity (W=72)...
+01:59:47 | Data loaded.
+02:30:37 |   Ep 5 | loss=0.3981 | val=0.7932
+03:02:13 |   Ep 10 | loss=0.3857 | val=0.7907
+03:02:31 |   Test AUROC: 0.8097
+03:02:31 | 
+[Step 2] Computing per-sample band attributions...
+03:03:16 |   Computed attributions for 158232 samples
+03:03:16 | 
+[Step 3] Dominant-Band Certificate Analysis
+03:03:16 | ============================================================
+03:03:16 |   Band names: ['infection', 'hemodynamics', 'organ_function']
+03:03:16 |   Mean relative contributions: ['infection=0.293', 'hemodynamics=0.144', 'organ_function=0.563']
+03:03:16 | 
+  Dominant band distribution (all samples):
+03:03:16 |     infection: 25.1%
+03:03:16 |     hemodynamics: 12.4%
+03:03:16 |     organ_function: 62.5%
+03:03:16 | 
+  Positive predictions (prob>0.5): 5533 (3.5%)
+03:03:16 |   Certified (infection dominant): 18.3%
+03:03:16 |   Uncertified (other band dominant): 81.7%
+03:03:16 | 
+  Certified positives: n=1011, precision=0.1048
+03:03:16 |   Uncertified positives: n=4522, precision=0.1440
+03:03:16 |   Precision lift (certified vs uncertified): -0.0391
+03:03:16 | 
+[Step 4] Threshold-Based Certificate
+03:03:16 | ============================================================
+03:03:16 |   Threshold    Certified%   Cert Prec    Uncert Prec  Lift       AUROC(cert)
+03:03:16 |   ------------------------------------------------------------------------
+03:03:16 |   0.30         34.7         0.1157       0.1480       -0.0324    0.7289
+03:03:16 |   0.35         29.9         0.1073       0.1474       -0.0401    0.7184
+03:03:16 |   0.40         26.6         0.1058       0.1446       -0.0388    0.7245
+03:03:16 |   0.45         23.6         0.1265       0.1384       -0.0119    0.7219
+03:03:16 |   0.50         20.8         0.1396       0.1366       0.0031     0.7098
+03:03:16 | 
+[Step 5] Clinical Safety Scenario
+03:03:16 | ============================================================
+03:03:16 |   Rule: 'Reject positive sepsis predictions where infection band is NOT dominant'
+03:03:16 |   Rationale: A sepsis alert not driven by infection signals may be spurious
+03:03:16 | 
+  Without certificate:
+03:03:16 |     Total alerts: 5533
+03:03:16 |     Alert precision: 0.1368
+03:03:16 |     True positives: 757
+03:03:16 | 
+  With certificate (reject uncertified alerts):
+03:03:16 |     Certified alerts: 1011 (18.3% of original)
+03:03:16 |     Certified precision: 0.1048
+03:03:16 |     Rejected alerts: 4522
+03:03:16 |     Rejected precision: 0.1440 (would have been wrong 85.6% of time)
+03:03:16 |     Precision improvement: -0.0320
+03:03:16 | 
+  Recall impact:
+03:03:16 |     Recall before: 0.2646
+03:03:16 |     Recall after: 0.0370
+03:03:16 |     Missed true positives: 651
+03:03:16 | 
+Done.

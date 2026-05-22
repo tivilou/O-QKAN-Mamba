@@ -1,0 +1,25 @@
+{
+  "test_auroc": 0.8097110812985898,
+  "band_names": [
+    "infection",
+    "hemodynamics",
+    "organ_function"
+  ],
+  "mean_band_contributions": {
+    "infection": 0.2928042709827423,
+    "hemodynamics": 0.1441265195608139,
+    "organ_function": 0.5630691647529602
+  },
+  "dominant_band_distribution": {
+    "infection": 0.25146620152687194,
+    "hemodynamics": 0.12356539764396582,
+    "organ_function": 0.6249684008291623
+  },
+  "certificate_filtering": {
+    "alerts_before": 5533,
+    "precision_before": 0.13681547343730927,
+    "alerts_after": 1011,
+    "precision_after": 0.10484668612480164,
+    "precision_lift": -0.03196878731250763
+  }
+}

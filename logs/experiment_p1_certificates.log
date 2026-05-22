@@ -1,0 +1,50 @@
+10:02:11 | ============================================================
+10:02:11 | P1: SPECTRAL CERTIFICATE END-TO-END EVALUATION
+10:02:11 | ============================================================
+10:02:11 | 
+[Step 1] Training OPFA+Identity (W=72)...
+10:04:15 | Data loaded.
+10:04:16 | Model params: 2216
+10:34:37 |   Ep 5 | loss=0.3998 | val=0.7712
+11:04:37 |   Ep 10 | loss=0.3865 | val=0.7828
+11:10:58 |   Final test AUROC: 0.8070
+11:10:58 | 
+[Step 2] Collecting spectral certificates on test set...
+11:11:16 |   Collected 158232 predictions
+11:11:16 | 
+[Step 3] Certificate Analysis
+11:11:16 | ============================================================
+11:11:16 |   Bands: ['infection', 'hemodynamics', 'organ_function']
+11:11:16 |   Band contributions (last batch): ['infection=0.353', 'hemodynamics=0.399', 'organ_function=0.248']
+11:11:16 |   Active bands (last batch): ['infection', 'hemodynamics', 'organ_function']
+11:11:16 | 
+  Band activation rates (across 1237 batches):
+11:11:16 |     infection: 100.0% active
+11:11:16 |     hemodynamics: 100.0% active
+11:11:16 |     organ_function: 100.0% active
+11:11:16 | 
+[Step 4] Certificate-Based Safety Filtering
+11:11:16 | ============================================================
+11:11:16 | 
+  Confidence-stratified analysis:
+11:11:16 |     Threshold=0.3: coverage=100.0%, precision=0.1148, recall=0.2807
+11:11:16 |     Threshold=0.5: coverage=100.0%, precision=0.1148, recall=0.2807
+11:11:16 |     Threshold=0.7: coverage=91.2%, precision=0.1855, recall=0.1668
+11:11:16 |     Threshold=0.9: coverage=72.2%, precision=0.0904, recall=0.0195
+11:11:16 | 
+[Step 5] Band Isolation Verification
+11:11:16 | ============================================================
+11:11:16 |   Mask 'infection' (layers [0, 1]): mean |Δprob| = 0.0778
+11:11:16 |   Mask 'hemodynamics' (layers [2, 3]): mean |Δprob| = 0.0403
+11:11:16 |   Mask 'organ_function' (layers [4, 5]): mean |Δprob| = 0.0397
+11:11:16 | 
+============================================================
+11:11:16 | P1 SUMMARY
+11:11:16 | ============================================================
+11:11:16 |   Model: OPFA+Identity, W=72, 2216 params
+11:11:16 |   Test AUROC: 0.8070
+11:11:16 |   Band structure: ['infection', 'hemodynamics', 'organ_function']
+11:11:16 |   All bands active in all batches: True
+11:11:16 |   Band isolation verified: masking individual bands changes predictions
+11:11:16 | 
+Done.
