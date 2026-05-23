@@ -1,0 +1,34 @@
+04:41:16 | ============================================================
+04:41:16 | MULTI-SEED EXPERIMENT (3 seeds, W=72, DEVICE=cuda)
+04:41:16 | ============================================================
+04:41:16 | 
+Loading data...
+04:43:38 | Data loaded.
+05:59:44 |   [OPFA+Identity] seed=42: AUROC=0.8089
+06:48:04 |   [OPFA+Identity] seed=123: AUROC=0.8124
+08:10:44 |   [OPFA+Identity] seed=456: AUROC=0.8078
+08:10:44 |   [OPFA+Identity] MEAN=0.8097 ± 0.0020
+09:13:58 |   [OrigDARUAN+Conv1d] seed=42: AUROC=0.7975
+10:16:05 |   [OrigDARUAN+Conv1d] seed=123: AUROC=0.7988
+11:17:33 |   [OrigDARUAN+Conv1d] seed=456: AUROC=0.8016
+11:17:33 |   [OrigDARUAN+Conv1d] MEAN=0.7993 ± 0.0017
+11:30:31 |   [GRU_baseline] seed=42: AUROC=0.8195
+11:43:01 |   [GRU_baseline] seed=123: AUROC=0.8219
+11:54:37 |   [GRU_baseline] seed=456: AUROC=0.8135
+11:54:37 |   [GRU_baseline] MEAN=0.8183 ± 0.0035
+12:12:33 |   [Transformer_baseline] seed=42: AUROC=0.8208
+12:28:29 |   [Transformer_baseline] seed=123: AUROC=0.8205
+12:44:21 |   [Transformer_baseline] seed=456: AUROC=0.8150
+12:44:21 |   [Transformer_baseline] MEAN=0.8187 ± 0.0027
+12:44:21 | 
+============================================================
+12:44:21 | SUMMARY (mean ± std)
+12:44:21 | ============================================================
+12:44:21 |   Model                    AUROC            Params
+12:44:21 |   ------------------------------------------------
+12:44:21 |   Transformer_baseline     0.8187 ± 0.0027  73857
+12:44:21 |   GRU_baseline             0.8183 ± 0.0035  44225
+12:44:21 |   OPFA+Identity            0.8097 ± 0.0020  2216
+12:44:21 |   OrigDARUAN+Conv1d        0.7993 ± 0.0017  6823
+12:44:21 | 
+Done.
