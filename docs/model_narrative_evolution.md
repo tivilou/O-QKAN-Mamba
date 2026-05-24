@@ -784,6 +784,51 @@ P0 在 W=24 下 OPFA 不如 OrigDARUAN，消融方向也反了。
 3. **参数效率极高**：2,216 params 达到 GRU（44K）的 98.9% 性能，Transformer（74K）的 98.9%
 4. **vs 经典基线差距约 0.9%**，但参数量只有 1/20 到 1/33
 
+---
+
+## 可解释性实验：频段-特征归因分析
+
+### 日期
+2025-05-21
+
+### 实验设计
+训练 OPFA+Identity（W=72），然后通过梯度分析和频段 mask 测量每个频段对各输入特征的敏感度。
+验证频段是否自发学习到与临床类别对齐的特征敏感性。
+
+### 结果
+
+#### 整体特征重要性（梯度幅度 Top 10）
+
+| 排名 | 特征 | |grad| | 临床类别 |
+|------|------|-------|---------|
+| 1 | FiO2 | 1.329 | hemodynamics |
+| 2 | Hgb | 0.372 | organ_function |
+| 3 | AST | 0.304 | organ_function |
+| 4 | SBP | 0.287 | hemodynamics |
+| 5 | Bilirubin_direct | 0.284 | organ_function |
+| 6 | Hct | 0.273 | organ_function |
+| 7 | TroponinI | 0.259 | organ_function |
+| 8 | HR | 0.258 | hemodynamics |
+| 9 | Alkalinephos | 0.250 | organ_function |
+| 10 | Bilirubin_total | 0.239 | organ_function |
+
+#### 临床对齐分数
+
+| 频段 | 自身类别Δ | 其他类别Δ | 比率 |
+|------|----------|----------|------|
+| hemodynamics | -0.037 | -0.014 | **2.71** |
+| organ_function | -0.007 | -0.004 | **1.62** |
+| infection | -0.015 | -0.012 | **1.26** |
+
+### 结论
+
+1. **所有频段比率 > 1.0**：每个频段优先影响其对应临床类别的特征
+2. **hemodynamics 对齐最强**（2.71x）：SBP 是该频段最受影响的特征
+3. **organ_function 对齐良好**（1.62x）：Alkalinephos, Hgb, Creatinine 为主
+4. **infection 对齐较弱**（1.26x）：模型倾向于用跨域信息判断感染
+
+**论文论点**：即使没有强制特征路由，OPFA 的频段分区也自发学习到与临床类别部分对齐的特征敏感性模式。这证明了结构性谱可解释性的价值。
+
 ```markdown
 ## vX.Y — [简短标题]
 

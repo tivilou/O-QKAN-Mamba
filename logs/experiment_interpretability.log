@@ -1,0 +1,63 @@
+01:35:36 | ============================================================
+01:35:36 | INTERPRETABILITY: Feature-Band Sensitivity Analysis
+01:35:36 | ============================================================
+01:35:36 | 
+Loading data (W=72)...
+01:37:57 | Data loaded.
+01:37:57 | 
+Training OPFA+Identity model...
+02:28:00 |   Ep 10 | val=0.7863
+02:57:55 | Model trained.
+02:57:55 | 
+[Analysis 1] Per-feature gradient magnitude
+02:57:55 | ============================================================
+02:57:56 | 
+  Top 10 features by gradient magnitude (overall):
+02:57:56 |     1. FiO2                 |grad|=1.329267
+02:57:56 |     2. Hgb                  |grad|=0.372365
+02:57:56 |     3. AST                  |grad|=0.303537
+02:57:56 |     4. SBP                  |grad|=0.287004
+02:57:56 |     5. Bilirubin_direct     |grad|=0.283870
+02:57:56 |     6. Hct                  |grad|=0.273475
+02:57:56 |     7. TroponinI            |grad|=0.258936
+02:57:56 |     8. HR                   |grad|=0.257603
+02:57:56 |     9. Alkalinephos         |grad|=0.250051
+02:57:56 |     10. Bilirubin_total      |grad|=0.238698
+02:57:56 | 
+[Analysis 2] Per-band feature sensitivity (mask band -> gradient change)
+02:57:56 | ============================================================
+02:57:57 | 
+  Band 'infection' -- top features affected by masking:
+02:57:57 |     1. Alkalinephos         d|grad|=0.053809  [organ_function]
+02:57:57 |     2. SBP                  d|grad|=0.043881  [hemodynamics]
+02:57:57 |     3. TroponinI            d|grad|=0.036692  [organ_function]
+02:57:57 |     4. HR                   d|grad|=0.020401  [hemodynamics]
+02:57:57 |     5. Hgb                  d|grad|=0.018003  [organ_function]
+02:57:57 |     6. Creatinine           d|grad|=0.017326  [organ_function]
+02:57:57 |     7. BUN                  d|grad|=0.016394  [organ_function]
+02:57:59 | 
+  Band 'hemodynamics' -- top features affected by masking:
+02:57:59 |     1. SBP                  d|grad|=0.040196  [hemodynamics]
+02:57:59 |     2. Alkalinephos         d|grad|=0.029863  [organ_function]
+02:57:59 |     3. Hct                  d|grad|=0.020898  [organ_function]
+02:57:59 |     4. TroponinI            d|grad|=0.014297  [organ_function]
+02:57:59 |     5. Bilirubin_direct     d|grad|=0.006580  [organ_function]
+02:57:59 |     6. Hgb                  d|grad|=0.004981  [organ_function]
+02:57:59 |     7. HR                   d|grad|=-0.003959  [hemodynamics]
+02:58:00 | 
+  Band 'organ_function' -- top features affected by masking:
+02:58:00 |     1. Alkalinephos         d|grad|=0.029625  [organ_function]
+02:58:00 |     2. Hgb                  d|grad|=0.027593  [organ_function]
+02:58:00 |     3. SBP                  d|grad|=0.021219  [hemodynamics]
+02:58:00 |     4. Creatinine           d|grad|=0.011544  [organ_function]
+02:58:00 |     5. TroponinI            d|grad|=0.010607  [organ_function]
+02:58:00 |     6. EtCO2                d|grad|=0.009220  [hemodynamics]
+02:58:00 |     7. Resp                 d|grad|=0.008857  [infection]
+02:58:00 | 
+[Analysis 3] Clinical Alignment Score
+02:58:00 | ============================================================
+02:58:00 |   Band 'infection': own=-0.015138, other=-0.011967, ratio=1.26
+02:58:00 |   Band 'hemodynamics': own=-0.037258, other=-0.013756, ratio=2.71
+02:58:00 |   Band 'organ_function': own=-0.007262, other=-0.004485, ratio=1.62
+02:58:00 | 
+Done.
